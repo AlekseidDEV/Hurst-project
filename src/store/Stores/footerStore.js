@@ -40,7 +40,7 @@ const footerStore = {
         ]
     },
     getters: {
-        getFooterLink(state: any){
+        getFooterLink(state){
             return state.footerLinks
         }
     }

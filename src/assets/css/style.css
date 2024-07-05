@@ -7,6 +7,10 @@ body{
     line-height: 20px;
 }
 
+.swiper-pagination-bullet-active{
+    background: #C8A165 !important;
+}
+
 *{
     box-sizing: border-box !important;
     margin: 0;
@@ -424,7 +428,7 @@ pre {
     box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.12);
 }
 .price {
-    color: #434343;
+    color: #fff;
     font-size: 20px;
     line-height: 30px;
     position: absolute;

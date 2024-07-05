@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.12",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "axios": "^1.7.2",
+    "swiper": "^11.1.4",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
-    "@vitejs/plugin-vue": "^5.0.5",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
     "vue-tsc": "^2.0.21"
