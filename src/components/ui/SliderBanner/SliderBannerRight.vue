@@ -77,7 +77,7 @@ onBeforeMount(() => {
         <div id="ensign-nivoslider" class="slides">
           <swiper
               :modules="[Pagination, Autoplay, Navigation]"
-              :autoplay="{ delay: 8000, disableOnInteraction: true }"
+              :autoplay="{ delay: 800000, disableOnInteraction: true }"
               :pagination="{ el: '.swiper-pagination', clickable: true }"
               :loop="true"
               :navigation="{
@@ -86,8 +86,8 @@ onBeforeMount(() => {
               }"
           >
             <swiper-slide v-for="slide of slides" class="slide-custom">
-              <div class="position-relative">
-                <img :src="getImg(slide.imgSlide)" alt="img">
+              <div class="position-relative wrapper-cont">
+                <img class="img-slider" :src="getImg(slide.imgSlide)" alt="img">
                 <div id="slider-direction" class="t-cn slider-direction">
                   <div class="slider-progress"></div>
                   <div class="slider-content t-lfl s-tb slider-1">
@@ -126,6 +126,11 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
+
+.wrapper-cont{
+  background: #f4f4f2;
+}
+
 .slider-direction {
   position: absolute;
   top: 50%;

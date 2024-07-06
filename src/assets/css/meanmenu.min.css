@@ -33,9 +33,7 @@ a.meanmenu-reveal{display:none}
   width: 90%;
   font-weight: bold;
 }
-.mobile-menu-area {
-  background: #262626;
-}
+
 .mean-container .mean-nav ul li li a {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   opacity: 0.75;

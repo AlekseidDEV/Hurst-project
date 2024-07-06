@@ -2,7 +2,7 @@ const sliderBanner = {
     state: {
         slides: [
             {
-                imgSlide: "../../../assets/img/slider/slider-1/1.jpg",
+                imgSlide: "../../../assets/img/slider/slider-1/1.png",
                 sliderTitle: 'welcom to our',
                 sliderTitle1: 'furniture',
                 sliderTitle2: 'gallery 2024'

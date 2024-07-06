@@ -17,5 +17,4 @@ import SliderBannerButtons from "@/components/ui/SliderBanner/SliderBannerButton
 </template>
 
 <style scoped>
-
 </style>

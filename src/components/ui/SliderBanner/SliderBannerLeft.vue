@@ -8,7 +8,9 @@ const aboutProduct: Ref<ResponceData |  null> = ref(null)
 
 const randomProduct = (lenght: number, data: ResponceData[]) => {
   for(let i = 0; i < 2; i++){
-    const randomProduct = Math.floor(Math.random() * lenght) + 1
+    const randomProduct = Math.floor(Math.random() * lenght)
+
+    console.log(randomProduct)
 
     if(i === 0){
       firstProduct.value = data[randomProduct]
@@ -42,10 +44,10 @@ onMounted(() => {
         </div>
       </div>
       <div class="single-banner banner-2">
-        <a class="banner-thumb" href="#"><img class="img-banner" :src="aboutProduct?.image" alt="img"></a>
+        <img class="img-banner" :src="aboutProduct?.image" alt="img">
         <div class="banner-brief">
-          <h2 class="banner-title"><a href="#">New Product 2021</a></h2>
-          <p class="hidden-md hidden-sm d-none d-md-block">Lorem Ipsum is simply dummy text of the printing and types sate industry. Lorem Ipsum has been the industry.</p>
+          <h2 class="banner-title text-white">New Product 2024</h2>
+          <p class="hidden-md hidden-sm d-none d-md-block text-white">Lorem Ipsum is simply dummy text of the printing and types sate industry. Lorem Ipsum has been the industry.</p>
           <a href="#" class="button-one font-16px" data-text="Buy now">Buy now</a>
         </div>
       </div>
@@ -56,14 +58,28 @@ onMounted(() => {
 
 <style scoped>
 .img-banner{
-  max-height: 323px;
+  height: 100%;
   object-fit: cover;
-  height: 323px;
-  max-width: 410px;
+  max-height: 323px;
+  min-height: 250px;
 }
 
-@media (max-width: 1715px) {
+@media (min-width: 1700px) {
+  .img-banner{
+    max-height: 280px;
+  }
+}
 
+@media (min-width: 2000px) {
+  .img-banner{
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 2580px) {
+  .img-banner{
+    max-height: 550px;
+  }
 }
 
 .wrapper-breaf{
