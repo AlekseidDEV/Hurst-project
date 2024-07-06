@@ -77,7 +77,7 @@ onBeforeMount(() => {
         <div id="ensign-nivoslider" class="slides">
           <swiper
               :modules="[Pagination, Autoplay, Navigation]"
-              :autoplay="{ delay: 800000, disableOnInteraction: true }"
+              :autoplay="{ delay: 8000, disableOnInteraction: true }"
               :pagination="{ el: '.swiper-pagination', clickable: true }"
               :loop="true"
               :navigation="{

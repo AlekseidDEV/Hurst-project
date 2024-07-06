@@ -11,6 +11,11 @@ body{
     background: #C8A165 !important;
 }
 
+.pagination-right{
+    text-align: right !important;
+    padding-right: 50px !important;
+}
+
 *{
     box-sizing: border-box !important;
     margin: 0;
@@ -705,7 +710,7 @@ pre {
     font-weight: 700;
     line-height: 28px;
 }
-.pro-rating a {
+.pro-rating i {
     color: #c87065 !important;
     font-size: 15px !important;
     line-height: 28px !important;

@@ -10,8 +10,6 @@ const randomProduct = (lenght: number, data: ResponceData[]) => {
   for(let i = 0; i < 2; i++){
     const randomProduct = Math.floor(Math.random() * lenght)
 
-    console.log(randomProduct)
-
     if(i === 0){
       firstProduct.value = data[randomProduct]
     }else {

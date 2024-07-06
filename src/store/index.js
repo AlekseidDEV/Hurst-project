@@ -1,11 +1,11 @@
 import {createStore} from "vuex";
 import footerStore from "@/store/Stores/footerStore.js";
-import sliderBanner from "@/store/Stores/sliderBanner.js";
+import sliders from "@/store/Stores/sliders.js";
 
 const store = createStore({
     modules: {
         footerStore,
-        sliderBanner
+        sliderBanner: sliders
     }
 })
 

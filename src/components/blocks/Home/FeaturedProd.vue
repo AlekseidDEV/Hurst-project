@@ -1,5 +1,45 @@
 <script setup lang="ts">
+import {onMounted, Ref, ref} from "vue";
 
+import {Swiper, SwiperSlide} from "swiper/vue";
+import {axiosClient} from "@/axiosClient.ts";
+import FeaturedCard from "@/components/ui/FeaturedProd/FeaturedCard.vue";
+import {SwiperClass} from "swiper/react";
+
+import {ResponceData} from "@/models/interface/responceData.ts";
+
+import 'swiper/css/navigation';
+import 'swiper/css'
+
+const slider: Ref<SwiperClass | null> = ref(null)
+const adviceCards: Ref<ResponceData[] | null> = ref(null)
+const countSlides = ref(0)
+
+const nextSlide = () => {
+  countSlides.value++
+
+  if(slider.value?.isEnd) countSlides.value = slider.value?.activeIndex
+
+  slider.value?.slideTo(countSlides.value)
+}
+
+const prevSlide = () => {
+  countSlides.value--
+
+  if(slider.value?.activeIndex === 0) countSlides.value = 0
+
+  slider.value?.slideTo(countSlides.value)
+}
+
+const onSwiper = (swiper: SwiperClass) => {
+  slider.value = swiper
+}
+
+onMounted(() => {
+  axiosClient.get('products?label=advice').then(response => {
+    adviceCards.value = response.data
+  })
+})
 </script>
 
 <template>
@@ -11,155 +51,38 @@
           <div class="section-title text-center">
             <h2 class="title-border">Featured Products</h2>
           </div>
-          <div class="product-slider style-1 arrow-left-right d-flex">
-            <!-- Single-product start -->
-            <div class="single-product">
-              <div class="product-img">
-                <span class="pro-label new-label">new</span>
-                <a href="single-product.html"><img src="@assets/img/product/1.jpg" alt=""></a>
-                <div class="product-action clearfix">
-                  <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                  <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                  <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </div>
-              </div>
-              <div class="product-info clearfix">
-                <div class="fix">
-                  <h4 class="post-title floatleft"><a href="#">dummy Product name</a></h4>
-                  <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
-                </div>
-                <div class="fix">
-                  <span class="pro-price floatleft">$ 56.20</span>
-                  <span class="pro-rating floatright">
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											</span>
-                </div>
-              </div>
-            </div>
-            <!-- Single-product end -->
-            <!-- Single-product start -->
-            <div class="single-product">
-              <div class="product-img">
-                <span class="pro-label sale-label">Sale</span>
-                <a href="single-product.html"><img src="@assets/img/product/2.jpg" alt=""></a>
-                <div class="product-action clearfix">
-                  <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                  <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                  <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </div>
-              </div>
-              <div class="product-info clearfix">
-                <div class="fix">
-                  <h4 class="post-title floatleft"><a href="#">dummy Product name</a></h4>
-                  <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
-                </div>
-                <div class="fix">
-                  <span class="pro-price floatleft">$ 56.20</span>
-                  <span class="pro-rating floatright">
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											</span>
-                </div>
-              </div>
-            </div>
-            <!-- Single-product end -->
-            <!-- Single-product start -->
-            <div class="single-product">
-              <div class="product-img">
-                <a href="single-product.html"><img src="@assets/img/product/3.jpg" alt=""></a>
-                <div class="product-action clearfix">
-                  <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                  <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                  <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </div>
-              </div>
-              <div class="product-info clearfix">
-                <div class="fix">
-                  <h4 class="post-title floatleft"><a href="#">dummy Product name</a></h4>
-                  <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
-                </div>
-                <div class="fix">
-                  <span class="pro-price floatleft">$ 56.20</span>
-                  <span class="pro-rating floatright">
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											</span>
-                </div>
-              </div>
-            </div>
-            <!-- Single-product end -->
-            <!-- Single-product start -->
-            <div class="single-product">
-              <div class="product-img">
-                <a href="single-product.html"><img src="@assets/img/product/4.jpg" alt=""></a>
-                <div class="product-action clearfix">
-                  <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                  <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                  <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </div>
-              </div>
-              <div class="product-info clearfix">
-                <div class="fix">
-                  <h4 class="post-title floatleft"><a href="#">dummy Product name</a></h4>
-                  <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
-                </div>
-                <div class="fix">
-                  <span class="pro-price floatleft">$ 56.20</span>
-                  <span class="pro-rating floatright">
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											</span>
-                </div>
-              </div>
-            </div>
-            <!-- Single-product end -->
-            <!-- Single-product start -->
-            <div class="single-product">
-              <div class="product-img">
-                <span class="pro-label new-label">new</span>
-                <a href="single-product.html"><img src="@assets/img/product/3.jpg" alt=""></a>
-                <div class="product-action clearfix">
-                  <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                  <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                  <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </div>
-              </div>
-              <div class="product-info clearfix">
-                <div class="fix">
-                  <h4 class="post-title floatleft"><a href="#">dummy Product name</a></h4>
-                  <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
-                </div>
-                <div class="fix">
-                  <span class="pro-price floatleft">$ 56.20</span>
-                  <span class="pro-rating floatright">
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-												<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											</span>
-                </div>
-              </div>
-            </div>
-            <!-- Single-product end -->
+          <div class="position-relative">
+            <swiper
+                :slides-per-view="4"
+                :space-between="20"
+                @swiper="onSwiper"
+                :breakpoints="{
+                  '991': {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                  },
+                  '780': {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                  '600': {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                   '320': {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  }
+                }"
+            >
+              <swiper-slide v-for="slide of adviceCards">
+                <FeaturedCard
+                    :slideInfo="slide"
+                />
+              </swiper-slide>
+            </swiper>
+            <button @click="prevSlide" class="prev-btn">prev</button>
+            <button @click="nextSlide" class="next-btn">next</button>
           </div>
         </div>
       </div>
@@ -169,5 +92,53 @@
 </template>
 
 <style scoped>
+  .prev-btn{
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #eeeeee;
+    color: #a6a6a6;
+    font-weight: 700;
+    left: -50px;
+    line-height: 20px;
+    position: absolute;
+    padding: 5px 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    cursor: pointer;
+  }
 
+  .next-btn{
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #eeeeee;
+    color: #a6a6a6;
+    font-weight: 700;
+    right: -50px;
+    line-height: 20px;
+    position: absolute;
+    padding: 5px 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    cursor: pointer;
+  }
+
+  .next-btn:hover,
+  .prev-btn:hover{
+    background: #C8A165;
+    color: white;
+  }
+
+  @media (max-width: 375px) {
+    .next-btn{
+      right: -30px;
+    }
+
+    .prev-btn{
+      left: -30px;
+    }
+  }
 </style>
