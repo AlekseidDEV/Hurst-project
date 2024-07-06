@@ -89,7 +89,9 @@ onMounted(() => {
     </div>
   </div>
   <!-- PRODUCT-AREA END -->
+
 </template>
+
 
 <style scoped>
   .prev-btn{
