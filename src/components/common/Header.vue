@@ -37,7 +37,7 @@ import MobileHeaderMenu from "@/components/ui/header/HeaderMobileMenu.vue";
           <div class="col-md-4 offset-md-4 col-7">
             <div class="logo text-md-center">
               <router-link to="/">
-                <img src="../../assets/img/logo/logo.png" alt="logo" class="logo py-0">
+                <img src="/img/logo/logo.png" alt="logo" class="logo py-0">
               </router-link>
             </div>
           </div>

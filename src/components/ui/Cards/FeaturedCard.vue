@@ -2,6 +2,7 @@
 import {ResponceData} from "@/models/interface/responceData.ts";
 import {onMounted, Ref, ref} from "vue";
 import {Elem} from "@/models/types.ts";
+import {useGeneratorStars} from "@/shared/useGeneratorStars.ts";
 
 const {slideInfo} = defineProps<{
   slideInfo: ResponceData
@@ -9,24 +10,9 @@ const {slideInfo} = defineProps<{
 
 const stars: Ref<Elem | null> = ref(null)
 
-const generateStars = () => {
-  for (let i = 0; i < 5; i++) {
-    const items = document.createElement('i')
-
-    if (Math.floor(slideInfo.rating) > i) {
-      items.classList.add('zmdi', 'zmdi-star');
-    } else if (slideInfo.rating - i < 1 && slideInfo.rating - i > 0) {
-      items.classList.add('zmdi', 'zmdi-star-half');
-    } else {
-      items.classList.add('zmdi', 'zmdi-star-outline');
-    }
-
-    stars.value?.append(items)
-  }
-}
 
 onMounted(() => {
-  generateStars()
+useGeneratorStars(slideInfo, stars)
 })
 </script>
 
@@ -34,7 +20,7 @@ onMounted(() => {
   <!-- Single-product start -->
   <div class="single-product">
     <div class="product-img">
-      <span class="advice-label">{{ slideInfo.label }}</span>
+      <span class="pro-label advice-label">{{ slideInfo.label }}</span>
       <img class="slide-img" :src="slideInfo.image" alt="img">
       <div class="product-action clearfix">
         <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i
@@ -63,20 +49,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.advice-label {
-  left: 20px;
-  position: absolute;
-  top: 20px;
-  z-index: 2;
-  background: #84c865 none repeat scroll 0 0;
-  border-radius: 5px;
-  color: #fff;
-  height: 25px;
-  line-height: 25px;
-  padding: 0 10px;
-  text-transform: capitalize;
-}
-
 .slide-img {
   max-height: 227px;
   min-height: 227px;

@@ -3,7 +3,7 @@ import {onMounted, Ref, ref} from "vue";
 
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {axiosClient} from "@/axiosClient.ts";
-import FeaturedCard from "@/components/ui/FeaturedProd/FeaturedCard.vue";
+import FeaturedCard from "@/components/ui/Cards/FeaturedCard.vue";
 import {SwiperClass} from "swiper/react";
 
 import {ResponceData} from "@/models/interface/responceData.ts";

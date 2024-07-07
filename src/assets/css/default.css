@@ -87,6 +87,23 @@
 .pro-label.sale-label {
   background: #c87065 none repeat scroll 0 0;
 }
+
+.pro-label.advice-label {
+  background: #84c865 none repeat scroll 0 0;
+}
+
+.advice-label {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  z-index: 2;
+  border-radius: 5px;
+  color: #fff;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
 .single-banner .pro-label {
   left: 30px;
 }
