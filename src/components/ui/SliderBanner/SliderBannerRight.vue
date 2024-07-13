@@ -9,8 +9,9 @@ import {useStore} from "vuex";
 import 'swiper/css'
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import {StoreVuex} from "@/models/interface/storeVuex.ts";
 
-const store = useStore()
+const store: StoreVuex = useStore()
 const slides = store.getters['getSlidesBanner']
 const refObserver: Ref<IntersectionObserver | null> = ref(null)
 

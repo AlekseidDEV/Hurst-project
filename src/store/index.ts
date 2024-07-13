@@ -1,7 +1,7 @@
 import {createStore} from "vuex";
-import footerStore from "@/store/Stores/footerStore.js";
-import sliders from "@/store/Stores/sliders.js";
-import globalStore from "@/store/Stores/globalStore.js";
+import footerStore from "@/store/Stores/footerStore.ts";
+import sliders from "@/store/Stores/sliders.ts";
+import globalStore from "@/store/Stores/globalStore.ts";
 
 const store = createStore({
     modules: {

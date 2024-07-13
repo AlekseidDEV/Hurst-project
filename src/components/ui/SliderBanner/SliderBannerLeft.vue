@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {onMounted, Ref, ref} from "vue";
-import {axiosClient} from '../../../axiosClient.ts'
+import {axiosClient} from '@/axiosClient.ts'
 import {ResponceData} from "@/models/interface/responceData.ts";
 
 const firstProduct: Ref<ResponceData | null> = ref(null)
@@ -90,7 +90,7 @@ onMounted(() => {
 }
 
 .single-banner::after{
-  background: rgba(91, 91, 91, 0.4);
+  background: rgba(35, 35, 35, 0.7);
   position: absolute;
   content: '';
   width: 100%;

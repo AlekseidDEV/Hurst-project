@@ -4,8 +4,8 @@ import {onMounted, Ref, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {axiosClient} from "@/axiosClient.ts";
 import FeaturedCard from "@/components/ui/Cards/FeaturedCard.vue";
-import {SwiperClass} from "swiper/react";
 
+import { SwiperClass } from "@/swipers";
 import {ResponceData} from "@/models/interface/responceData.ts";
 
 import 'swiper/css/navigation';

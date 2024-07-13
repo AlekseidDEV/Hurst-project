@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch server/db.json --port=2000"
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
+    "json-server": "^0.16.3",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
     "vue-tsc": "^2.0.21"

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 
 import {useStore} from "vuex";
-import {computed, ComputedRef, onMounted} from "vue";
+import {computed, onMounted} from "vue";
 import {Elem} from "@/models/types.ts";
-import {ResponceData} from "@/models/interface/responceData.ts";
 import PurchaseCards from "@/components/ui/Cards/PurchaseCards.vue";
+import {StoreVuex} from "@/models/interface/storeVuex.ts";
 
-const store = useStore()
-const purchaseCards: ComputedRef<ResponceData[]> = computed(() => store.getters['getPurchaseCard'])
+const store: StoreVuex = useStore()
+const purchaseCards = computed(() => store.getters['getPurchaseCard'])
 
 const cnangeTab = (e: Event) => {
   const links = document.querySelectorAll('.link-purchase')

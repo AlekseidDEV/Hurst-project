@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {useStore} from "vuex";
-import {FooterObj} from "@/models/interface/footerLinks.ts";
+import {StoreVuex} from "@/models/interface/storeVuex.ts";
 
-const store = useStore()
-const arrLinks: FooterObj[] = store.getters['getFooterLink']
+const store: StoreVuex = useStore()
+const arrLinks = store.getters['getFooterLink']
 
 </script>
 

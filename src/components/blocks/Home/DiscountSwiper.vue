@@ -2,8 +2,9 @@
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Pagination, Autoplay} from "swiper/modules";
 import {useStore} from "vuex";
+import {StoreVuex} from "@/models/interface/storeVuex.ts";
 
-const store = useStore()
+const store: StoreVuex = useStore()
 const slides = store.getters['getSlideDiscount']
 
 const getImg = (path: string) => {
