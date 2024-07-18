@@ -557,7 +557,6 @@ button {
 	Main-Menu open and close button
 ----------------------------------------------------- */
 .hamburger {
-  padding: 15px 15px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, -webkit-filter;
@@ -664,10 +663,8 @@ button {
 /* Quickview */
 .modal { z-index: 13000;}
 #productModal .modal-dialog {
-    margin: 5% auto;
     max-width: 96%;
     min-height: 300px;
-    padding: 20px;
     width: 870px;
 }
 #productModal .modal-header {

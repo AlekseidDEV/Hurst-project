@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="col-md-4 col-5">
+  <div class="col-md-4 col-5 d-flex align-items-center justify-content-end">
     <div class="mini-cart text-end">
       <ul>
         <li>

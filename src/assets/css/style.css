@@ -140,9 +140,6 @@ pre {
 .logo {
     padding: 38px 0;
 }
-.cart-icon {
-    padding: 50px 0;
-}
 .cart-icon,
 .logo {
     transition: all 0.5s ease 0s;
@@ -258,9 +255,10 @@ pre {
     color: #c8a165;
 }
 .menu-toggle {
-    left: 25px;
+    left: 42px;
     position: absolute;
-    top: 42px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 99999999;
     transition: all 0.5s ease 0s;
 }

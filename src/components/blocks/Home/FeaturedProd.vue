@@ -133,7 +133,7 @@ store.dispatch('setFeatureCard', 'products?label=advice')
     padding: 5px 5px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 999;
+    z-index: 99;
     writing-mode: vertical-lr;
     text-orientation: upright;
     cursor: pointer;
@@ -150,7 +150,7 @@ store.dispatch('setFeatureCard', 'products?label=advice')
     padding: 5px 5px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 999;
+    z-index: 99;
     writing-mode: vertical-lr;
     text-orientation: upright;
     cursor: pointer;

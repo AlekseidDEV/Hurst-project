@@ -15,7 +15,7 @@ const emits = defineEmits<{
 const inputQuntity = ref(1)
 
 const addCart = () => {
-  if(inputQuntity.value >= 0){
+  if(inputQuntity.value <= 0){
     inputQuntity.value = 1
   }
 
@@ -114,5 +114,12 @@ const closeModal = (e: Event) => {
     max-width: 318px;
     min-width: 318px;
     object-fit: cover;
+  }
+
+  .modal-dialog{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    left: 50%;
   }
 </style>
