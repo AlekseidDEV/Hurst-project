@@ -1,6 +1,6 @@
-import {FooterStores} from "@/models/interface/footerStores.ts";
+import {FooterModuleStore} from "@/models/interface/footerModuleStore";
 
-const footerStore: FooterStores = {
+const footerStore: FooterModuleStore = {
     state: {
         footerLinks: [
             {

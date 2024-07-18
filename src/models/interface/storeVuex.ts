@@ -1,16 +1,18 @@
-import {Posts} from "@/models/interface/posts.ts";
-import {ResponceData} from "@/models/interface/responceData.ts";
-import {SlidesDiscount, SlidesSliderBanner} from "@/models/interface/sliderStore.ts";
-import {FooterLinks} from "@/models/interface/footerStores.ts";
+import {Posts} from "@/models/interface/posts";
+import {ResponceData, ResponceDataCart} from "@/models/interface/responceData";
+import {SlidesDiscount, SlidesSliderBanner} from "@/models/interface/sliderModuleStore";
+import {FooterObj} from "@/models/interface/footerLinks";
 
 type Dispatch = <T>(type: string, payload?: T | T[]) => void
 
 interface Getters {
     getPosts: Posts[]
-    getFooterLink: FooterLinks[]
+    getFooterLink: FooterObj[]
     getPurchaseCard: ResponceData[]
     getSlideDiscount: SlidesDiscount[]
     getSlidesBanner: SlidesSliderBanner[]
+    getFeatureCard: ResponceData[]
+    getCart: ResponceDataCart[]
 }
 
 export interface StoreVuex {

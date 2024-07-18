@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 
 const store: StoreVuex = useStore()
 const arrLinks = store.getters['getFooterLink']
@@ -17,7 +17,8 @@ const arrLinks = store.getters['getFooterLink']
             <div class="single-footer">
               <h3 class="footer-title  title-border">{{item.title}}</h3>
               <ul v-if="item.ulClass === 'footer-contact'" :class="item.ulClass">
-                <li v-for="linkItem of item.links"><span>{{linkItem.title}}</span><p v-html="linkItem.text"></p></li>
+                <li v-for="linkItem of item.links">
+                  <span>{{linkItem.title}}</span><p v-html="linkItem.text"></p></li>
               </ul>
               <ul v-else :class="item.ulClass">
                 <li v-for="linkItem of item.links">
@@ -35,7 +36,7 @@ const arrLinks = store.getters['getFooterLink']
                 <div class="row">
                   <div class="col-sm-6 col-12">
                     <div class="footer-thumb">
-                      <a href="#"><img src="../../assets/img/footer/1.jpg" alt=""></a>
+                      <a href="#"><img src="/img/footer/1.jpg" alt=""></a>
                       <div class="footer-thumb-info">
                         <p><a href="#">Furniture Product<br>Name</a></p>
                         <h4 class="price-3">$ 60.00</h4>
@@ -44,7 +45,7 @@ const arrLinks = store.getters['getFooterLink']
                   </div>
                   <div class="col-sm-6 col-12">
                     <div class="footer-thumb">
-                      <a href="#"><img src="../../assets/img/footer/1.jpg" alt=""></a>
+                      <a href="#"><img src="/img/footer/1.jpg" alt=""></a>
                       <div class="footer-thumb-info">
                         <p><a href="#">Furniture Product<br>Name</a></p>
                         <h4 class="price-3">$ 60.00</h4>
@@ -70,10 +71,10 @@ const arrLinks = store.getters['getFooterLink']
           </div>
           <div class="col-md-6">
             <div class="payment  text-md-end">
-              <a href="#"><img src="../../assets/img/payment/1.png" alt=""></a>
-              <a href="#"><img src="../../assets/img/payment/2.png" alt=""></a>
-              <a href="#"><img src="../../assets/img/payment/3.png" alt=""></a>
-              <a href="#"><img src="../../assets/img/payment/4.png" alt=""></a>
+              <a href="#"><img src="/img/payment/1.png" alt="payment"></a>
+              <a href="#"><img src="/img/payment/2.png" alt="payment"></a>
+              <a href="#"><img src="/img/payment/3.png" alt="payment"></a>
+              <a href="#"><img src="/img/payment/4.png" alt="payment"></a>
             </div>
           </div>
         </div>

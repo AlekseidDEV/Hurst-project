@@ -5,11 +5,23 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
     "noEmit": true,
+    "allowArbitraryExtensions": true,
+    "outDir": "./dist",
+    "types": ["vite/client","swiper"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
+    "src/**/*",
+    "src/**/*.ts",
     "vite.config.js"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

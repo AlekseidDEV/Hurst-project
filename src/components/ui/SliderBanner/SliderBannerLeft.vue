@@ -1,26 +1,18 @@
 <script setup lang="ts">
 import {onMounted, Ref, ref} from "vue";
-import {axiosClient} from '@/axiosClient.ts'
-import {ResponceData} from "@/models/interface/responceData.ts";
+import {axiosClient} from '@/axiosClient'
+import {ResponceData} from "@/models/interface/responceData";
+import {useRandomArray} from "@/shared/useRandomArray";
 
 const firstProduct: Ref<ResponceData | null> = ref(null)
 const aboutProduct: Ref<ResponceData |  null> = ref(null)
 
-const randomProduct = (lenght: number, data: ResponceData[]) => {
-  for(let i = 0; i < 2; i++){
-    const randomProduct = Math.floor(Math.random() * lenght)
-
-    if(i === 0){
-      firstProduct.value = data[randomProduct]
-    }else {
-      aboutProduct.value = data[randomProduct]
-    }
-  }
-}
-
 onMounted(() => {
   axiosClient.get('products?label=new').then((res) => {
-    randomProduct(res.data.length, res.data)
+      const randomCard = useRandomArray(res.data, 2)
+
+      firstProduct.value = randomCard[0] as ResponceData
+      aboutProduct.value = randomCard[1] as ResponceData
   })
 })
 </script>

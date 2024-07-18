@@ -1,43 +1,73 @@
-import {axiosClient} from "@/axiosClient.ts"
-import {ResponceData} from "@/models/interface/responceData.ts";
-import {GlobalStores} from "@/models/interface/globalStores.ts";
+import {axiosClient} from "@/axiosClient"
+import {ResponceData} from "@/models/interface/responceData";
+import {GlobalModuleStores} from "@/models/interface/globalModuleStores";
+import {useRandomArray} from "@/shared/useRandomArray";
 
-const globalStore: GlobalStores = {
+const globalStore: GlobalModuleStores = {
     state: {
         purchaseCards: [],
-        posts: []
+        featureCard: [],
+        posts: [],
+        user: {
+            name: '',
+            id: 0,
+            email: '',
+            phone: '',
+            companyName: '',
+            contry: '',
+            state: '',
+            townCity: '',
+            address: '',
+            billingAdress: {
+                name: '',
+                id: 0,
+                email: '',
+                phone: '',
+                companyName: '',
+                contry: '',
+                state: '',
+                townCity: '',
+                address: '',
+            },
+            orderHistory: [],
+            wishList: []
+        },
+        userRole: 'guest',
+        cartHistory: []
     },
     actions: {
-        setPurchaseCard({commit}, path) {
-            axiosClient.get(path as string).then((res) => {
-                let randomCards = []
+       async setPurchaseCard({commit}, path) {
+           const responce = await axiosClient.get(path as string)
+           let cards: ResponceData[] = useRandomArray(responce.data, 8)
 
-                randomCards = res.data
 
-                for(let i = randomCards.length - 1; i > - 1; i--){
-                    let tmp = randomCards[i]
-                    let rnd = Math.floor(Math.random() * (i + 1))
-
-                    randomCards[i] = randomCards[rnd]
-                    randomCards[rnd] = tmp
-                }
-                commit('setPurchaseCard', randomCards.slice(0, 8))
-            })
+           commit('setPurchaseCard', cards)
         },
         setPosts({commit}, flag){
             axiosClient.get('posts').then((res) => {
-                const arrPosts: ResponceData[] = []
+                let arrPosts: ResponceData[] = []
                 if(flag === 1){
                     for(let i = 0; i < 2; i++){
-                        const randomNumber = Math.floor(Math.random() * res.data.length)
-
-                        arrPosts.push(res.data[randomNumber])
+                        arrPosts = useRandomArray(res.data, 2) as ResponceData[]
                     }
                     commit('setPosts', arrPosts)
                 }else {
                     commit('setPosts', res.data)
                 }
             })
+        },
+        setFeatureCard({commit}, path){
+            axiosClient.get(path).then(response => {
+                commit('setFeatureCard', response.data)
+            })
+        },
+        updateCart({commit}, cart){
+            commit('setCart', cart)
+        },
+        setLocalStorageCart({commit}){
+           const data = localStorage.getItem('cart') || '[]'
+
+            commit('setCart', JSON.parse(data))
         }
     },
     mutations: {
@@ -46,6 +76,12 @@ const globalStore: GlobalStores = {
         },
         setPosts(state, data){
             state.posts = data
+        },
+        setFeatureCard(state, data){
+            state.featureCard = data
+        },
+        setCart(state, data){
+            state.cartHistory = data
         }
     },
     getters: {
@@ -54,6 +90,12 @@ const globalStore: GlobalStores = {
         },
         getPosts(state){
            return state.posts
+        },
+        getFeatureCard(state){
+           return state.featureCard
+        },
+        getCart(state){
+            return state.cartHistory
         }
     },
 }

@@ -1,4 +1,4 @@
-import {SlidersStore} from "@/models/interface/sliderStore.ts";
+import {SlidersStore} from "@/models/interface/sliderModuleStore";
 
 const sliders: SlidersStore = {
     state: {

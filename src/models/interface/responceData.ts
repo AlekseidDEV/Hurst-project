@@ -1,4 +1,4 @@
-import {Colors} from "@/models/interface/colors.ts";
+import {Colors} from "@/models/interface/colors";
 
 export interface ResponceData {
     category: string
@@ -10,4 +10,9 @@ export interface ResponceData {
     price: number
     rating: number
     size: string[]
+    [key: string]: unknown
+}
+
+export interface ResponceDataCart extends ResponceData {
+    qty: number
 }

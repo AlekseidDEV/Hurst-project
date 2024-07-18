@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {Ref, ref, watch} from "vue";
-import {Elem} from "@/models/types.ts";
+import {Elem} from "@/models/types";
 
 const isShowMenu = ref(false)
 const dropDown: Ref<Elem | null> = ref(null)

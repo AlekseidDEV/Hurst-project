@@ -1,19 +1,30 @@
 <script setup lang="ts">
-import {onMounted, Ref, ref} from "vue";
-
+import {computed, onMounted, Ref, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
-import {axiosClient} from "@/axiosClient.ts";
 import FeaturedCard from "@/components/ui/Cards/FeaturedCard.vue";
 
 import { SwiperClass } from "@/swipers";
-import {ResponceData} from "@/models/interface/responceData.ts";
+
 
 import 'swiper/css/navigation';
 import 'swiper/css'
+import {useStore} from "vuex";
+import {StoreVuex} from "@/models/interface/storeVuex";
+import ProductModal from "@/components/ui/modals/ProductModal.vue";
+import {ResponceData} from "@/models/interface/responceData.ts";
 
+const store: StoreVuex = useStore()
 const slider: Ref<SwiperClass | null> = ref(null)
-const adviceCards: Ref<ResponceData[] | null> = ref(null)
+const adviceCards = computed(() => store.getters['getFeatureCard'])
 const countSlides = ref(0)
+const productModalOn = ref(false)
+const cardInfoModal: Ref<ResponceData | {}> = ref({})
+
+const openModalCard = (card: ResponceData) => {
+  cardInfoModal.value = card
+
+  productModalOn.value = !productModalOn.value
+}
 
 const nextSlide = () => {
   countSlides.value++
@@ -36,9 +47,7 @@ const onSwiper = (swiper: SwiperClass) => {
 }
 
 onMounted(() => {
-  axiosClient.get('products?label=advice').then(response => {
-    adviceCards.value = response.data
-  })
+store.dispatch('setFeatureCard', 'products?label=advice')
 })
 </script>
 
@@ -78,6 +87,7 @@ onMounted(() => {
               <swiper-slide v-for="slide of adviceCards">
                 <FeaturedCard
                     :slideInfo="slide"
+                    @openModal="openModalCard"
                 />
               </swiper-slide>
             </swiper>
@@ -89,11 +99,29 @@ onMounted(() => {
     </div>
   </div>
   <!-- PRODUCT-AREA END -->
-
+  <transition>
+    <ProductModal
+        v-if="productModalOn"
+        :cardInfo="cardInfoModal as ResponceData"
+        @close="productModalOn = false"
+    />
+  </transition>
 </template>
 
 
 <style scoped>
+
+.v-enter-active,
+.v-leave-active {
+  transition: 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(-300px);
+}
+
   .prev-btn{
     background: #fff none repeat scroll 0 0;
     border: 2px solid #eeeeee;

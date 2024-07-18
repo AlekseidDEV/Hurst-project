@@ -1,5 +1,25 @@
 <script setup lang="ts">
+import {useStore} from "vuex";
+import {StoreVuex} from "@/models/interface/storeVuex";
+import {computed, onMounted} from "vue";
+import {useUuidGenerator} from "@/shared/useUuidGenerator.ts";
 
+const store: StoreVuex = useStore()
+const arrCart = computed(() => store.getters['getCart'])
+
+const sumCart = computed(() => {
+  return arrCart.value.reduce((sum, item) => {
+    return sum += item.qty * item.price
+  }, 0)
+})
+
+const numQuntity = (qty: number) => {
+  return qty < 10 ? '0' + qty.toString() : qty
+}
+
+onMounted(() => {
+  store.dispatch('setLocalStorageCart')
+})
 </script>
 
 <template>
@@ -9,38 +29,30 @@
         <li>
           <a class="cart-icon" href="#">
             <i class="zmdi zmdi-shopping-cart"></i>
-            <span>3</span>
+            <span>{{arrCart.length}}</span>
           </a>
           <div class="mini-cart-brief text-left">
             <div class="cart-items">
-              <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+              <p class="mb-0">You have <span>{{arrCart.length}} items</span> in your shopping bag</p>
             </div>
             <div class="all-cart-product clearfix">
-<!--              <div class="single-cart clearfix">-->
-<!--                <div class="cart-photo">-->
-<!--                  &lt;!&ndash;                          <a href="#"><img src="img/cart/1.jpg" alt=""></a>&ndash;&gt;-->
-<!--                </div>-->
-<!--                <div class="cart-info">-->
-<!--                  <h5><a href="#">dummy product name</a></h5>-->
-<!--                  <p class="mb-0">Price : $ 100.00</p>-->
-<!--                  <p class="mb-0">Qty : 02 </p>-->
-<!--                  <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="single-cart clearfix">-->
-<!--                <div class="cart-photo">-->
-<!--                  &lt;!&ndash;                          <a href="#"><img src="img/cart/2.jpg" alt=""></a>&ndash;&gt;-->
-<!--                </div>-->
-<!--                <div class="cart-info">-->
-<!--                  <h5><a href="#">dummy product name</a></h5>-->
-<!--                  <p class="mb-0">Price : $ 300.00</p>-->
-<!--                  <p class="mb-0">Qty : 01 </p>-->
-<!--                  <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>-->
-<!--                </div>-->
-<!--              </div>-->
+              <div v-if="arrCart.length === 0" class="d-flex align-items-center justify-content-end">
+                <span class="px-4">cart is empty</span>
+              </div>
+              <div v-for="item of arrCart" :key="useUuidGenerator()" class="single-cart clearfix">
+                <div class="cart-photo">
+                  <img class="img-cart" :src="item.image" alt="img">
+                </div>
+                <div class="cart-info">
+                  <h5><a href="#">{{item.name}}</a></h5>
+                  <p class="mb-0">Price : $ {{Math.round((item.qty * item.price) * 100) / 100}}</p>
+                  <p class="mb-0">Qty : {{numQuntity(item.qty)}} </p>
+                  <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                </div>
+              </div>
             </div>
             <div class="cart-totals">
-              <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+              <h5 class="mb-0">Total <span class="floatright">${{sumCart === 0 ? "0.00" : sumCart.toFixed(2)}}</span></h5>
             </div>
             <div class="cart-bottom  clearfix">
               <a href="cart.html" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
@@ -54,5 +66,11 @@
 </template>
 
 <style scoped>
-
+.img-cart{
+  max-height: 70px;
+  min-height: 70px;
+  max-width: 70px;
+  min-width: 70px;
+  object-fit: cover;
+}
 </style>

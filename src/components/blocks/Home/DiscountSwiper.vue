@@ -2,14 +2,10 @@
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Pagination, Autoplay} from "swiper/modules";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 
 const store: StoreVuex = useStore()
 const slides = store.getters['getSlideDiscount']
-
-const getImg = (path: string) => {
-  return new URL(path, import.meta.url).href
-}
 
 </script>
 
@@ -19,16 +15,15 @@ const getImg = (path: string) => {
     <div class="container">
       <swiper
           :modules="[Autoplay, Pagination]"
-          :autoplay="{ delay: 5000, disableOnInteraction: true }"
-          :pagination="{ el: '.swiper-pagination', clickable: true }"
+          :autoplay="{ delay: 5000, disableOnInteraction: true } as any"
+          :pagination="{ el: '.swiper-pagination', clickable: true} as any"
           :grab-cursor="true"
           :loop="true"
       >
         <swiper-slide v-for="slide of slides">
           <div class="col-lg-12">
             <div class="discount-product">
-              <img src="../../../assets" alt="">
-              <img :src="getImg(slide.images)" alt="img">
+              <img :src="slide.images" alt="img">
               <div class="discount-img-brief">
                 <div class="onsale">
                   <span class="onsale-text">{{ slide.saleText }}</span>

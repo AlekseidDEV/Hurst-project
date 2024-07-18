@@ -7,6 +7,10 @@ body{
     line-height: 20px;
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
 .swiper-pagination-bullet-active{
     background: #C8A165 !important;
 }

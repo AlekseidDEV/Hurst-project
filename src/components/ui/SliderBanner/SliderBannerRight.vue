@@ -2,22 +2,17 @@
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {onBeforeMount, onMounted, Ref, ref} from "vue";
 import {Pagination, Autoplay, Navigation} from "swiper/modules";
-import {Elem} from "@/models/types.ts";
+import {Elem} from "@/models/types";
 import {useStore} from "vuex";
-
 
 import 'swiper/css'
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 
 const store: StoreVuex = useStore()
 const slides = store.getters['getSlidesBanner']
 const refObserver: Ref<IntersectionObserver | null> = ref(null)
-
-const getImg = (imgPath: string) => {
-  return new URL(imgPath, import.meta.url).href
-}
 
 const startAnimations = (elem: Elem) => {
   const swipeElements = elem.querySelectorAll('.fadeIn')
@@ -53,7 +48,7 @@ onMounted(() => {
   }
 
   const observer = new IntersectionObserver(handlerObserver, {
-    rootMargin: "50px",
+    rootMargin: "0px",
     threshold: 0.5
   })
 
@@ -78,17 +73,17 @@ onBeforeMount(() => {
         <div id="ensign-nivoslider" class="slides">
           <swiper
               :modules="[Pagination, Autoplay, Navigation]"
-              :autoplay="{ delay: 8000, disableOnInteraction: true }"
-              :pagination="{ el: '.swiper-pagination', clickable: true }"
+              :autoplay="{ delay: 8000, disableOnInteraction: true } as any"
+              :pagination="{ el: '.swiper-pagination', clickable: true } as any"
               :loop="true"
               :navigation="{
                 prevEl: '.prev',
                 nextEl: '.next'
-              }"
+              } as any"
           >
-            <swiper-slide v-for="slide of slides" class="slide-custom">
-              <div class="position-relative wrapper-cont">
-                <img class="img-slider" :src="getImg(slide.imgSlide)" alt="img">
+            <swiper-slide v-for="slide of slides">
+              <div class="position-relative wrapper-cont slide-custom">
+                <img class="img-slider" :src="slide.imgSlide" alt="img">
                 <div id="slider-direction" class="t-cn slider-direction">
                   <div class="slider-progress"></div>
                   <div class="slider-content t-lfl s-tb slider-1">

@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 
 const store: StoreVuex = useStore()
 const posts = computed(() => store.getters['getPosts'])
 
 onMounted(() => {
   store.dispatch('setPosts', 1)
-  console.log(store)
 })
 </script>
 

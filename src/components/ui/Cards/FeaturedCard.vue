@@ -1,35 +1,47 @@
 <script setup lang="ts">
-import {ResponceData} from "@/models/interface/responceData.ts";
+import {ResponceData} from "@/models/interface/responceData";
 import {onMounted, Ref, ref} from "vue";
-import {Elem} from "@/models/types.ts";
-import {useGeneratorStars} from "@/shared/useGeneratorStars.ts";
+import {Elem} from "@/models/types";
+import {useGeneratorStars} from "@/shared/useGeneratorStars";
+import {useRouter} from "vue-router";
+import {useAddCart} from "@/shared/useAddCart.ts";
+
+const router = useRouter()
 
 const {slideInfo} = defineProps<{
   slideInfo: ResponceData
 }>()
 
+const emits = defineEmits<{
+  (e: "openModal", card: ResponceData): void
+}>()
+
 const stars: Ref<Elem | null> = ref(null)
 
+const clickableCard = () => {
+  router.push({name: 'single-product', params: {name: slideInfo.name.split(' ').join('')}})
+}
 
 onMounted(() => {
 useGeneratorStars(slideInfo, stars)
 })
+
 </script>
 
 <template>
   <!-- Single-product start -->
-  <div class="single-product">
+  <div @click.stop="clickableCard" class="single-product cursor-pointer px-2">
     <div class="product-img">
       <span class="pro-label advice-label">{{ slideInfo.label }}</span>
       <img class="slide-img" :src="slideInfo.image" alt="img">
-      <div class="product-action clearfix">
-        <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i
-            class="zmdi zmdi-favorite-outline"></i></a>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i
-            class="zmdi zmdi-zoom-in"></i></a>
-        <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-        <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i
-            class="zmdi zmdi-shopping-cart-plus"></i></a>
+      <div class="product-action clearfix d-flex justify-content-center">
+        <span class="icon-card cursor-pointer"  title="Wishlist"><i
+            class="zmdi zmdi-favorite-outline"></i></span>
+        <span class="icon-card cursor-pointer"  title="Quick View" @click.stop="emits('openModal', slideInfo)"><i
+            class="zmdi zmdi-zoom-in"></i></span>
+        <span class="icon-card cursor-pointer"  title="Compare"><i class="zmdi zmdi-refresh"></i></span>
+        <span class="icon-card cursor-pointer" @click.stop="useAddCart(slideInfo)"  title="Add To Cart"><i
+            class="zmdi zmdi-shopping-cart-plus"></i></span>
       </div>
     </div>
     <div class="product-info clearfix">
@@ -54,4 +66,27 @@ useGeneratorStars(slideInfo, stars)
   min-height: 227px;
   object-fit: cover;
 }
+
+.icon-card{
+  height: 40px;
+  width: 25%;
+  line-height: 40px;
+  font-size: 16px;
+  position: relative;
+}
+
+.icon-card:nth-child(1)::before,
+.icon-card:nth-child(2)::before,
+.icon-card:nth-child(3)::before
+{
+  background: #999 none repeat scroll 0 0;
+  content: "";
+  height: 16px;
+  margin-top: -8px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 2px;
+}
+
 </style>

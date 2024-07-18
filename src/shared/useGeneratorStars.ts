@@ -1,5 +1,5 @@
-import {ResponceData} from "@/models/interface/responceData.ts";
-import {Elem} from "@/models/types.ts";
+import {ResponceData} from "@/models/interface/responceData";
+import {Elem} from "@/models/types";
 import {Ref} from "vue";
 
 export function useGeneratorStars(data: ResponceData, elem: Ref<Elem | null>){

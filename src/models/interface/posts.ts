@@ -1,4 +1,4 @@
-import {Commentators} from "@/models/interface/commentators.ts";
+import {Commentators} from "@/models/interface/commentators";
 
 export interface Posts {
     imagePath: string
