@@ -14,7 +14,7 @@ const openMegaMenu = () => {
   <!-- MAIN-MENU START -->
   <div @click="openMegaMenu" class="menu-toggle hamburger hamburger--emphatic d-none d-md-block">
     <div v-if="!isShowMenu" class="hamburger-box">
-      <div class="hamburger-inner"></div>
+      <i class="bi bi-list"></i>
     </div>
     <div v-if="isShowMenu">
       <div class="close-hamburger">
@@ -140,6 +140,16 @@ const openMegaMenu = () => {
 <style scoped>
   .close-hamburger{
     font-size: 25px;
+    cursor: pointer;
+  }
+
+  .hamburger-box{
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .hamburger-box i::before{
+    font-weight: 800;
   }
 
   .active-menu{

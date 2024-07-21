@@ -149,6 +149,10 @@ onBeforeMount(() => {
   font-size: 14px;
 }
 
+.prev > i::before{
+  font-weight: 600;
+}
+
 .prev{
   position: absolute;
   top: 50%;
@@ -216,5 +220,9 @@ onBeforeMount(() => {
 .next > i {
   font-size: 14px;
   margin-right: 2px;
+}
+
+.next > i::before{
+  font-weight: 600;
 }
 </style>

@@ -38,7 +38,7 @@ const arrLinks = store.getters['getFooterLink']
                     <div class="footer-thumb">
                       <a href="#"><img src="/img/footer/1.jpg" alt=""></a>
                       <div class="footer-thumb-info">
-                        <p><a href="#">Furniture Product<br>Name</a></p>
+                        <p><a href="#" class="text-white">Furniture Product<br>Name</a></p>
                         <h4 class="price-3">$ 60.00</h4>
                       </div>
                     </div>
@@ -47,7 +47,7 @@ const arrLinks = store.getters['getFooterLink']
                     <div class="footer-thumb">
                       <a href="#"><img src="/img/footer/1.jpg" alt=""></a>
                       <div class="footer-thumb-info">
-                        <p><a href="#">Furniture Product<br>Name</a></p>
+                        <p><a href="#" class="text-white">Furniture Product<br>Name</a></p>
                         <h4 class="price-3">$ 60.00</h4>
                       </div>
                     </div>

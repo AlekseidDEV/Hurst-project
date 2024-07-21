@@ -556,90 +556,7 @@ button {
 /* -----------------------------------------------------
 	Main-Menu open and close button
 ----------------------------------------------------- */
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, -webkit-filter;
-  transition-property: opacity, filter;
-  transition-property: opacity, filter, -webkit-filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible; }
-.hamburger:hover {
-    opacity: 0.7; }
 
-.hamburger-box {
-  display: inline-block;
-  height: 21px;
-  position: relative;
-  width: 21px;
-}
-.hamburger-inner {
-  display: block;
-  transition: transform 0.5s ease, top 0.3s ease;
-  top: 50%;
-  margin-top: -2px; }
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 21px;
-  transition: transform 0.9s ease, top 0.3s ease;
-    height: 3px;
-    background-color: #333;
-    border-radius: 0px;
-    position: absolute;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease; }
-.hamburger-inner::before, .hamburger-inner::after {
-    content: "";
-    display: block; }
-.hamburger-inner::before {top: -6px; }
-.hamburger-inner::after { bottom: -10px; }
-	
-
-/*
- * Emphatic
- */
-.hamburger--emphatic {overflow: hidden; }
-.hamburger--emphatic .hamburger-inner {transition: background-color 0.2s 0.25s ease-in; }
-.hamburger--emphatic .hamburger-inner::before {
-      left: 0;
-      transition: top 0.05s 0.2s linear, left 0.2s 0.25s ease-in, -webkit-transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-      transition: transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.2s linear, left 0.2s 0.25s ease-in;
-      transition: transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.2s linear, left 0.2s 0.25s ease-in, -webkit-transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
-.hamburger--emphatic .hamburger-inner::after {
-      top: 6px;
-      right: 0;
-      transition: top 0.05s 0.2s linear, right 0.2s 0.25s ease-in, -webkit-transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-      transition: transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.2s linear, right 0.2s 0.25s ease-in;
-      transition: transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.2s linear, right 0.2s 0.25s ease-in, -webkit-transform 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
-.hamburger--emphatic.active .hamburger-inner {
-    transition-delay: 0s;
-    transition-timing-function: ease-out;
-    background-color: transparent; }
-.hamburger--emphatic.active .hamburger-inner::before {
-      left: -80px;
-      top: -80px;
-      -webkit-transform: translate3d(80px, 80px, 0) rotate(45deg);
-              transform: translate3d(80px, 80px, 0) rotate(45deg);
-      transition: left 0.2s ease-out, top 0.05s 0.2s linear, -webkit-transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-      transition: left 0.2s ease-out, top 0.05s 0.2s linear, transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-      transition: left 0.2s ease-out, top 0.05s 0.2s linear, transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1); }
-.hamburger--emphatic.active .hamburger-inner::after {
-      right: -80px;
-      top: -80px;
-      -webkit-transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-              transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-      transition: right 0.2s ease-out, top 0.05s 0.2s linear, -webkit-transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-      transition: right 0.2s ease-out, top 0.05s 0.2s linear, transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-      transition: right 0.2s ease-out, top 0.05s 0.2s linear, transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1); }
 /* ============= */
 /* Tooltip */
 .tooltip {opacity:1 !important;}
@@ -888,46 +805,8 @@ h3.widget-title-modal {
   width: 45px;
   z-index: 200;
 }
-#scrollUp:hover {
-    background: #c8a165 none repeat scroll 0 0;
-}
-@keyframes scroll-ani-to-top {
-	0% {
-		bottom: 0;
-		opacity: 0;
-	}
-	50% {
-		bottom: 50%;
-		opacity: 1;
-	}
-	100% {
-		bottom: 10%;
-		opacity: 0;
-	}
-}
-@-webkit-keyframes scroll-ani-to-top {
-	0% {
-		bottom: 0;
-		opacity: 0;
-	}
-	50% {
-		bottom: 50%;
-		opacity: 1;
-	}
-	100% {
-		bottom: 75%;
-		opacity: 0;
-	}
-}
-#scrollUp:hover i {
-    animation: 800ms linear 0s normal none infinite running scroll-ani-to-top;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    margin-bottom: -25px;
-    position: absolute;
-    width: 100%;
-}
+
+
 
 
 
