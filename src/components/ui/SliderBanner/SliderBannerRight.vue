@@ -111,8 +111,8 @@ onBeforeMount(() => {
               </div>
             </swiper-slide>
             <div class="swiper-pagination"></div>
-            <div class="prev"><i class="zmdi zmdi-chevron-left"></i></div>
-            <div class="next"><i class="zmdi zmdi-chevron-right"></i></div>
+            <div class="prev"><i class="bi bi-chevron-left"></i></div>
+            <div class="next"><i class="bi bi-chevron-right"></i></div>
           </swiper>
         </div>
       </div>
@@ -145,8 +145,8 @@ onBeforeMount(() => {
 }
 
 .prev > i {
-  margin-left: 5px;
-  font-size: 25px;
+  margin-left: 2px;
+  font-size: 14px;
 }
 
 .prev{
@@ -214,7 +214,7 @@ onBeforeMount(() => {
 }
 
 .next > i {
-  font-size: 25px;
-  margin-right: 5px;
+  font-size: 14px;
+  margin-right: 2px;
 }
 </style>

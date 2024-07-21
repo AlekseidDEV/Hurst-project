@@ -35,13 +35,13 @@ useGeneratorStars(slideInfo, stars)
       <span class="pro-label advice-label">{{ slideInfo.label }}</span>
       <img class="slide-img" :src="slideInfo.image" alt="img">
       <div class="product-action clearfix d-flex justify-content-center">
-        <span class="icon-card cursor-pointer"  title="Wishlist"><i
-            class="zmdi zmdi-favorite-outline"></i></span>
-        <span class="icon-card cursor-pointer"  title="Quick View" @click.stop="emits('openModal', slideInfo)"><i
-            class="zmdi zmdi-zoom-in"></i></span>
-        <span class="icon-card cursor-pointer"  title="Compare"><i class="zmdi zmdi-refresh"></i></span>
-        <span class="icon-card cursor-pointer" @click.stop="useAddCart(slideInfo)"  title="Add To Cart"><i
-            class="zmdi zmdi-shopping-cart-plus"></i></span>
+        <span class="icon-card cursor-pointer"  title="Wishlist"><i class="bi bi-heart"></i></span>
+        <span class="icon-card cursor-pointer"  title="Quick View" @click.stop="emits('openModal', slideInfo)">
+          <i class="bi bi-zoom-in"></i>
+        </span>
+        <span class="icon-card cursor-pointer"  title="Compare"><i class="bi bi-arrow-repeat"></i></span>
+        <span class="icon-card cursor-pointer" @click.stop="useAddCart(slideInfo)"  title="Add To Cart">
+          <i class="bi bi-cart-plus"></i></span>
       </div>
     </div>
     <div class="product-info clearfix">

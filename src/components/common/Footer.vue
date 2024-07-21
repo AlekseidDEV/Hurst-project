@@ -23,7 +23,7 @@ const arrLinks = store.getters['getFooterLink']
               <ul v-else :class="item.ulClass">
                 <li v-for="linkItem of item.links">
                   <router-link :to="linkItem.url">
-                    <i class="zmdi zmdi-dot-circle"></i>{{linkItem.title}}
+                    <i class="bi bi-record-circle"></i>{{linkItem.title}}
                   </router-link>
                 </li>
               </ul>

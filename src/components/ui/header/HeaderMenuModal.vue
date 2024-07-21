@@ -17,7 +17,9 @@ const openMegaMenu = () => {
       <div class="hamburger-inner"></div>
     </div>
     <div v-if="isShowMenu">
-      <div class="close-hamburger">X</div>
+      <div class="close-hamburger">
+        <i class="bi bi-x-circle"></i>
+      </div>
     </div>
   </div>
   <div class="main-menu  d-none d-md-block" :class="isShowMenu ? 'active-menu' : ''">
@@ -137,14 +139,7 @@ const openMegaMenu = () => {
 
 <style scoped>
   .close-hamburger{
-    font-weight: 800;
-    font-size: 15px;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    padding: 5px;
-    text-align: center;
-    color: #434343 ;
+    font-size: 25px;
   }
 
   .active-menu{
@@ -152,15 +147,4 @@ const openMegaMenu = () => {
     transition: 0.5s;
   }
 
-  .close-hamburger::after{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 53%;
-    transform: translateX(-50%);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid #c87065;
-  }
 </style>

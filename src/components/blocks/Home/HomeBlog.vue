@@ -42,9 +42,9 @@ onMounted(() => {
                     </div>
                   </div>
                   <div class="like-share fix">
-                    <a href="#"><i class="zmdi zmdi-favorite"></i><span>{{post.likes}} Like</span></a>
-                    <a href="#"><i class="zmdi zmdi-comments"></i><span>{{post.commentsCount}} Comments</span></a>
-                    <a href="#"><i class="zmdi zmdi-share"></i><span>{{post.reposts}} Share</span></a>
+                    <a href="#"><i class="bi bi-heart-fill"></i><span>{{post.likes}} Like</span></a>
+                    <a href="#"><i class="bi bi-chat-left-fill"></i><span>{{post.commentsCount}} Comments</span></a>
+                    <a href="#"><i class="bi bi-share-fill"></i><span>{{post.reposts}} Share</span></a>
                   </div>
                   <p>{{post.text}}</p>
                   <a href="#" class="button-2 text-dark-red">Read more...</a>

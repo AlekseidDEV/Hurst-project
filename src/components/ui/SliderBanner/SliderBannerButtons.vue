@@ -8,8 +8,8 @@
     <div class="table">
       <div class="table-cell">
         <ul>
-          <li><a class="search-open" href="#" title="Search"><i class="zmdi zmdi-search"></i></a></li>
-          <li><a href="#" title="Login"><i class="zmdi zmdi-lock"></i></a>
+          <li><a class="search-open" href="#" title="Search"><i class="bi bi-search"></i></a></li>
+          <li><a href="#" title="Login"><i class="bi bi-lock-fill"></i></a>
             <div class="customer-login text-left">
               <form action="#">
                 <h4 class="title-1 title-border text-uppercase mb-30">Registered customers</h4>
@@ -21,8 +21,8 @@
               </form>
             </div>
           </li>
-          <li><a href="my-account.html" title="My-Account"><i class="zmdi zmdi-account"></i></a></li>
-          <li><a href="wishlist.html" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a></li>
+          <li><a href="my-account.html" title="My-Account"><i class="bi bi-person-fill"></i></a></li>
+          <li><a href="wishlist.html" title="Wishlist"><i class="bi bi-heart-fill"></i></a></li>
         </ul>
       </div>
     </div>

@@ -91,7 +91,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.list-move, /* применять переход к движущимся элементам */
+.list-move,
 .list-enter-active,
 .list-leave-active {
   transition: all 0.8s ease;
@@ -106,7 +106,7 @@ onMounted(() => {
 .list-leave-active {
   position: absolute;
   top: 50%;
-  left: -500px;
+  opacity: 0;
   transform: translateY(-50%);
 }
 

@@ -8,7 +8,7 @@ import '@assets/css/style.css'
 import '@assets/css/responsive.css'
 import '@assets/css/default.css'
 import '@assets/css/meanmenu.min.css'
-import '@assets/css/material-design-iconic-font.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const app = createApp(App)
 

@@ -28,7 +28,7 @@ onMounted(() => {
       <ul>
         <li>
           <a class="cart-icon" href="#">
-            <i class="zmdi zmdi-shopping-cart"></i>
+            <i class="bi bi-cart-fill"></i>
             <span>{{arrCart.length}}</span>
           </a>
           <div class="mini-cart-brief text-left">
