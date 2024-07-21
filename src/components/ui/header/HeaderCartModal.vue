@@ -47,7 +47,7 @@ onMounted(() => {
                   <h5><a href="#">{{item.name}}</a></h5>
                   <p class="mb-0">Price : $ {{Math.round((item.qty * item.price) * 100) / 100}}</p>
                   <p class="mb-0">Qty : {{numQuntity(item.qty)}} </p>
-                  <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                  <span class="cart-delete"><a href="#"><i class="bi bi-x"></i></a></span>
                 </div>
               </div>
             </div>
@@ -67,10 +67,9 @@ onMounted(() => {
 
 <style scoped>
 .img-cart{
-  max-height: 70px;
-  min-height: 70px;
-  max-width: 70px;
-  min-width: 70px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
 }
+
 </style>
