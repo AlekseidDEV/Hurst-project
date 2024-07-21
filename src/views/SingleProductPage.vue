@@ -6,6 +6,7 @@ import SingleProduct from "@/components/blocks/SingleProd/SingleProduct.vue";
   <SingleProduct/>
 </template>
 
+
 <style scoped>
 
 </style>
