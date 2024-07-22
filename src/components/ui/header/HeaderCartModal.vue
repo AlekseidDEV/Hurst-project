@@ -3,6 +3,7 @@ import {useStore} from "vuex";
 import {StoreVuex} from "@/models/interface/storeVuex";
 import {computed, onMounted} from "vue";
 import {useUuidGenerator} from "@/shared/useUuidGenerator.ts";
+import {Elem} from "@/models/types.ts";
 
 const store: StoreVuex = useStore()
 const arrCart = computed(() => store.getters['getCart'])
@@ -15,6 +16,23 @@ const sumCart = computed(() => {
 
 const numQuntity = (qty: number) => {
   return qty < 10 ? '0' + qty.toString() : qty
+}
+
+const removeCart = (e: Event, itemName: string) => {
+  const newArray = arrCart.value.filter((item) => item.name !== itemName)
+  const elemDelete = (e.target as Elem).closest('.single-cart')
+
+  let times = 0;
+
+  requestAnimationFrame(function animate() {
+    if(times++ < 10){
+      elemDelete?.classList.add('remove-card')
+      requestAnimationFrame(animate)
+    }else {
+      localStorage.setItem('cart', JSON.stringify(newArray))
+      store.dispatch('updateCart', newArray)
+    }
+  })
 }
 
 onMounted(() => {
@@ -39,17 +57,17 @@ onMounted(() => {
               <div v-if="arrCart.length === 0" class="d-flex align-items-center justify-content-end">
                 <span class="px-4">cart is empty</span>
               </div>
-              <div v-for="item of arrCart" :key="useUuidGenerator()" class="single-cart clearfix">
-                <div class="cart-photo">
-                  <img class="img-cart" :src="item.image" alt="img">
+                <div v-for="item of arrCart" :key="useUuidGenerator()" class="single-cart clearfix">
+                  <div class="cart-photo">
+                    <img class="img-cart" :src="item.image" alt="img">
+                  </div>
+                  <div class="cart-info">
+                    <h5><a href="#">{{item.name}}</a></h5>
+                    <p class="mb-0">Price : $ {{Math.round((item.qty * item.price) * 100) / 100}}</p>
+                    <p class="mb-0">Qty : {{numQuntity(item.qty)}} </p>
+                    <span @click.prevent="removeCart($event, item.name)" class="cart-delete"><a href="#"><i class="bi bi-x"></i></a></span>
+                  </div>
                 </div>
-                <div class="cart-info">
-                  <h5><a href="#">{{item.name}}</a></h5>
-                  <p class="mb-0">Price : $ {{Math.round((item.qty * item.price) * 100) / 100}}</p>
-                  <p class="mb-0">Qty : {{numQuntity(item.qty)}} </p>
-                  <span class="cart-delete"><a href="#"><i class="bi bi-x"></i></a></span>
-                </div>
-              </div>
             </div>
             <div class="cart-totals">
               <h5 class="mb-0">Total <span class="floatright">${{sumCart === 0 ? "0.00" : sumCart.toFixed(2)}}</span></h5>
@@ -72,4 +90,9 @@ onMounted(() => {
   object-fit: cover;
 }
 
+.remove-card{
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.3s ;
+}
 </style>

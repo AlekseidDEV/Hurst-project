@@ -34,7 +34,7 @@ interface Getters {
     getCart:(state: State) => ResponceDataCart[]
 }
 
-export interface GlobalModuleStores {
+export interface HomeModuleStores {
     state: State
     actions: Actions
     mutations: Mutations

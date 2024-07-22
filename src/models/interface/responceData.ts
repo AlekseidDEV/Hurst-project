@@ -10,9 +10,18 @@ export interface ResponceData {
     price: number
     rating: number
     size: string[]
+    comments: CommentProduct[]
     [key: string]: unknown
 }
 
 export interface ResponceDataCart extends ResponceData {
     qty: number
+}
+
+interface CommentProduct {
+    userName: string
+    review: string,
+    subject: string,
+    dateAdd: number,
+    rating: number
 }

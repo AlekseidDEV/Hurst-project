@@ -75,10 +75,10 @@ const closeModal = (e: Event) => {
                     <div class="widget widget_socialsharing_widget">
                       <h3 class="widget-title-modal">Share this product</h3>
                       <ul class="social-icons">
-                        <li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
-                        <li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
-                        <li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
-                        <li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+                        <li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="bi bi-google"></i></a></li>
+                        <li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="bi bi-twitter"></i></a></li>
+                        <li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="bi bi-facebook"></i></a></li>
+                        <li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="bi bi-linkedin"></i></a></li>
                       </ul>
                     </div>
                   </div>

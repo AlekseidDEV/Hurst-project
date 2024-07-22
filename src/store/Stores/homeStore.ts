@@ -1,9 +1,9 @@
 import {axiosClient} from "@/axiosClient"
 import {ResponceData} from "@/models/interface/responceData";
-import {GlobalModuleStores} from "@/models/interface/globalModuleStores";
+import {HomeModuleStores} from "@/models/interface/homeModuleStores.ts";
 import {useRandomArray} from "@/shared/useRandomArray";
 
-const globalStore: GlobalModuleStores = {
+const homeStore: HomeModuleStores = {
     state: {
         purchaseCards: [],
         featureCard: [],
@@ -100,4 +100,4 @@ const globalStore: GlobalModuleStores = {
     },
 }
 
-export default globalStore
+export default homeStore
