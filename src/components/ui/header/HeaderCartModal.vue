@@ -25,12 +25,13 @@ const removeCart = (e: Event, itemName: string) => {
   let times = 0;
 
   requestAnimationFrame(function animate() {
-    if(times++ < 10){
+    if(times++ < 15){
       elemDelete?.classList.add('remove-card')
       requestAnimationFrame(animate)
     }else {
-      localStorage.setItem('cart', JSON.stringify(newArray))
+      (elemDelete as Elem).style.display = 'none'
       store.dispatch('updateCart', newArray)
+      localStorage.setItem('cart', JSON.stringify(newArray))
     }
   })
 }
