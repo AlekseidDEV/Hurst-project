@@ -46,10 +46,10 @@ onMounted(() => {
     <div class="mini-cart text-end">
       <ul>
         <li>
-          <a class="cart-icon" href="#">
+          <span class="cart-icon cursor-pointer">
             <i class="bi bi-cart-fill"></i>
             <span>{{arrCart.length}}</span>
-          </a>
+          </span>
           <div class="mini-cart-brief text-left">
             <div class="cart-items">
               <p class="mb-0">You have <span>{{arrCart.length}} items</span> in your shopping bag</p>
@@ -96,4 +96,5 @@ onMounted(() => {
   transform: translateX(50px);
   transition: all 0.3s ;
 }
+
 </style>

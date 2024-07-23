@@ -1756,7 +1756,33 @@
       ]
     }
   ],
-  "user": [
-
+  "users": [
+    {
+      "name": "Alex",
+      "userRole": "person",
+      "id": "0",
+      "email": "alex.test@gmail.com",
+      "phone": "89251523024",
+      "companyName": "FCI",
+      "contry": "Russia",
+      "state": "",
+      "townCity": "Moscow",
+      "address": "",
+      "billingAdress": {
+        "name": "Alex",
+        "userRole": "person",
+        "id": "0",
+        "email": "",
+        "phone": "89251523024",
+        "companyName": "FCI",
+        "contry": "Russia",
+        "state": "",
+        "townCity": "Moscow",
+        "address": ""
+      },
+      "orderHistory": [],
+      "wishList": [],
+      "password": "123456f"
+    }
   ]
 }

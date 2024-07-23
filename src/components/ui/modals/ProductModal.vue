@@ -39,7 +39,7 @@ const closeModal = (e: Event) => {
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <button type="button" class="close"><span>&times;</span></button>
             </div>
             <div class="modal-body">
               <div class="modal-product">

@@ -2,6 +2,7 @@ import {Posts} from "@/models/interface/posts";
 import {ResponceData, ResponceDataCart} from "@/models/interface/responceData";
 import {SlidesDiscount, SlidesSliderBanner} from "@/models/interface/sliderModuleStore";
 import {FooterObj} from "@/models/interface/footerLinks";
+import {UserData} from "@/models/interface/userData.ts";
 
 type Dispatch = <T>(type: string, payload?: T | T[]) => void
 
@@ -13,6 +14,8 @@ interface Getters {
     getSlidesBanner: SlidesSliderBanner[]
     getFeatureCard: ResponceData[]
     getCart: ResponceDataCart[]
+    getLabelsSearch: string[]
+    getUser: UserData
 }
 
 export interface StoreVuex {

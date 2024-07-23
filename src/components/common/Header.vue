@@ -4,6 +4,7 @@ import HeaderMenuModal from "@/components/ui/header/HeaderMenuModal.vue";
 import MobileHeaderMenu from "@/components/ui/header/HeaderMobileMenu.vue";
 import {onBeforeMount, onMounted, Ref, ref} from "vue";
 import {Elem} from "@/models/types.ts";
+import HeaderMobileTop from "@/components/ui/header/HeaderMobileTop.vue";
 
 const stickyMenu: Ref<Elem | null> = ref(null)
 const onStick = ref(false)
@@ -34,20 +35,7 @@ onBeforeMount(() => {
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <!-- header-search-mobile start -->
-          <div class="header-search-mobile">
-            <div class="table">
-              <div class="table-cell">
-                <ul>
-                  <li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
-                  <li><a href="login.html"><i class="zmdi zmdi-lock"></i></a></li>
-                  <li><a href="my-account.html"><i class="zmdi zmdi-account"></i></a></li>
-                  <li><a href="wishlist.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- header-search-mobile start -->
+          <HeaderMobileTop/>
         </div>
       </div>
     </div>

@@ -259,7 +259,7 @@ pre {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 99999999;
+    z-index: 999;
     transition: all 0.5s ease 0s;
 }
 .menu-toggle-2 {
@@ -273,7 +273,7 @@ pre {
     top: 0;
     left: -255px;
     width: 225px;
-    z-index: 9999999;
+    z-index: 998;
     transition: 0.5s;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
 }
@@ -454,7 +454,7 @@ pre {
     bottom: 20px;
     left: 30px;
     position: absolute;
-    z-index: 999;
+    z-index: 10;
 }
 .banner-1 .banner-brief p {
     line-height: 15px;
@@ -571,6 +571,9 @@ pre {
     background: #fff none repeat scroll 0 0;
     padding: 40px;
 }
+.customer-login input {
+    background: #f6f6f6 none repeat scroll 0 0;
+}
 .sidebar-account .customer-login {
     border: 1px solid #f6f6f6;
     margin-top: -150px;
@@ -587,7 +590,7 @@ pre {
     opacity: 1;
     right: 100%;
     visibility: visible;
-    z-index: 99999;
+    z-index: 999;
 }
 .sidebar-search {
     background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
@@ -603,10 +606,10 @@ pre {
     position: relative;
 }
 .sidebar-search input {
-    background: transparent none repeat scroll 0 0;
-    border-bottom: 1px solid #c87065;
+    background: transparent none repeat scroll 0 0 !important;
+    border-bottom: 1px solid #c87065 !important;
     font-size: 16px;
-    margin-top: 230px;
+    margin-top: 100px;
 }
 .search-button {
     bottom: 25px;
@@ -2208,3 +2211,4 @@ input.cart-plus-minus-box {
         display: block;
     }
 }
+

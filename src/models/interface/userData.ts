@@ -1,8 +1,9 @@
 
-type BillingObject = Omit<UserData, "wishList" | "orderHistory" | "billingAdress">
+type BillingObject = Omit<UserData, "wishList" | "orderHistory" | "billingAdress" | "userRole">
 
 export interface UserData {
     name: string
+    userRole: string
     id: number
     email: string
     phone: string
@@ -13,5 +14,6 @@ export interface UserData {
     address: string
     billingAdress: BillingObject
     orderHistory: any[],
-    wishList: any[]
+    wishList: any[],
+    password?: string
 }

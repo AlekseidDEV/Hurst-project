@@ -8,8 +8,8 @@ interface State {
     featureCard: ResponceData[]
     posts: Posts[]
     user: UserData,
-    userRole: string,
     cartHistory: ResponceDataCart[]
+    searchResult: string[]
 }
 
 interface Actions {
@@ -18,6 +18,8 @@ interface Actions {
     setFeatureCard({commit}: Commit, path: string): void;
     updateCart({commit}: Commit, cart: ResponceDataCart[]): void
     setLocalStorageCart({commit}: Commit): void
+    searchProduct({commit}: Commit, str: string): void
+    setUser({commit}:Commit,  user: UserData): void
 }
 
 interface Mutations {
@@ -25,6 +27,8 @@ interface Mutations {
     setPosts(state: State, data: Posts[]): void;
     setFeatureCard(state: State, data: ResponceData[]): void
     setCart(state: State, data: ResponceDataCart[]): void
+    setSearchLabels(state: State, data: string[]): void
+    setUser(state: State,  user: UserData): void
 }
 
 interface Getters {
@@ -32,6 +36,8 @@ interface Getters {
     getPosts:(state: State) => Posts[]
     getFeatureCard:(state: State) => ResponceData[]
     getCart:(state: State) => ResponceDataCart[]
+    getLabelsSearch:(state: State) => string[]
+    getUser:(state: State) => UserData
 }
 
 export interface HomeModuleStores {

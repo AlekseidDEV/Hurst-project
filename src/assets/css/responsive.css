@@ -877,8 +877,15 @@
 .shop-list .pro-rating.floatright {
   float: right;
 }
+}
 
+@media (max-width: 550px) {
+  .cart-icon{
+    padding: 0;
+  }
 
-
+  .header{
+    padding: 25px 0 !important;
+  }
 }
  

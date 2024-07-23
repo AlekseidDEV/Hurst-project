@@ -42,18 +42,6 @@ watch(isShowMenu, (newValue) => {
           <li class="item-link">
             <router-link to="/">Home</router-link>
           </li>
-          <li class="item-link">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li class="item-link">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li class="item-link">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li class="item-link">
-            <router-link to="/">Home</router-link>
-          </li>
         </ul>
       </nav>
     </div>
