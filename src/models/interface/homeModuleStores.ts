@@ -10,6 +10,9 @@ interface State {
     user: UserData,
     cartHistory: ResponceDataCart[]
     searchResult: string[]
+    isLoginModal: boolean
+    isRegisterModal: boolean
+    newPersonEmail: string
 }
 
 interface Actions {
@@ -20,6 +23,9 @@ interface Actions {
     setLocalStorageCart({commit}: Commit): void
     searchProduct({commit}: Commit, str: string): void
     setUser({commit}:Commit,  user: UserData): void
+    visibleModalLogin({commit}:Commit,  value: boolean): void
+    visibleModalReg({commit}:Commit,  value: boolean): void
+    setNewEmail({commit}:Commit,  email: string): void
 }
 
 interface Mutations {
@@ -29,6 +35,9 @@ interface Mutations {
     setCart(state: State, data: ResponceDataCart[]): void
     setSearchLabels(state: State, data: string[]): void
     setUser(state: State,  user: UserData): void
+    setLoginValue(state: State, value: boolean): void
+    setRegValue(state: State, value: boolean): void
+    setNewEmail(state: State, email: string): void
 }
 
 interface Getters {
@@ -38,6 +47,9 @@ interface Getters {
     getCart:(state: State) => ResponceDataCart[]
     getLabelsSearch:(state: State) => string[]
     getUser:(state: State) => UserData
+    isModalLogin:(state: State) => boolean
+    isModalRegister:(state: State) => boolean
+    getNewEmail:(state: State) => string
 }
 
 export interface HomeModuleStores {

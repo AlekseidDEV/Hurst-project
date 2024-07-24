@@ -1,6 +1,6 @@
 import HomePage from "@/views/HomePage.vue";
 import {createRouter, createWebHistory} from "vue-router";
-import PageNotFound from "@/views/PageNotFound.vue";
+
 
 const routes = [
     {
@@ -16,7 +16,7 @@ const routes = [
     {
         path: "/404",
         name: "notFound",
-        component: PageNotFound
+        component: () => import('@/views/PageNotFound.vue')
     },
 ]
 

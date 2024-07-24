@@ -2,6 +2,12 @@
 
 import Header from "@/components/common/Header.vue";
 import Footer from "@/components/common/Footer.vue";
+import {onMounted} from "vue";
+import {useCoockieLogin} from "@/shared/useCoockieLogin.ts";
+
+onMounted(() => {
+  useCoockieLogin()
+})
 </script>
 
 <template>

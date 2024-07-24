@@ -34,7 +34,10 @@ const homeStore: HomeModuleStores = {
             wishList: []
         },
         cartHistory: [],
-        searchResult: []
+        searchResult: [],
+        isLoginModal: false,
+        isRegisterModal: false,
+        newPersonEmail: ''
     },
     actions: {
         async setPurchaseCard({commit}, path) {
@@ -86,6 +89,15 @@ const homeStore: HomeModuleStores = {
         },
         setUser({commit}, user) {
             commit('setUser', user)
+        },
+        visibleModalLogin({commit}, value) {
+            commit('setLoginValue', value)
+        },
+        visibleModalReg({commit}, value) {
+            commit('setRegValue', value)
+        },
+        setNewEmail({commit}, email) {
+            commit('setNewEmail', email)
         }
     },
     mutations: {
@@ -106,6 +118,17 @@ const homeStore: HomeModuleStores = {
         },
         setUser(state, user) {
             state.user = user
+        },
+        setLoginValue(state, value) {
+            state.isLoginModal = value
+        },
+        setRegValue(state, value) {
+            if(value) state.isLoginModal = false
+
+            state.isRegisterModal = value
+        },
+        setNewEmail(state, email) {
+            state.newPersonEmail = email
         }
     },
     getters: {
@@ -126,6 +149,15 @@ const homeStore: HomeModuleStores = {
         },
         getUser(state){
             return state.user
+        },
+        isModalLogin(state){
+            return state.isLoginModal
+        },
+        isModalRegister(state){
+            return state.isRegisterModal
+        },
+        getNewEmail(state){
+            return state.newPersonEmail
         }
     },
 }

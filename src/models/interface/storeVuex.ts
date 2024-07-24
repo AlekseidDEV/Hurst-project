@@ -16,6 +16,9 @@ interface Getters {
     getCart: ResponceDataCart[]
     getLabelsSearch: string[]
     getUser: UserData
+    isModalLogin: boolean
+    isModalRegister: boolean
+    getNewEmail: string
 }
 
 export interface StoreVuex {
