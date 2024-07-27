@@ -1,5 +1,6 @@
+import {CommentsUser} from "@/models/interface/commentsUser";
 
-type BillingObject = Omit<UserData, "wishList" | "orderHistory" | "billingAdress" | "userRole">
+type BillingObject = Omit<UserData, "wishList" | "orderHistory" | "billingAdress" | "userRole" | "comments" | "password">
 
 export interface UserData {
     name: string
@@ -16,4 +17,5 @@ export interface UserData {
     orderHistory: any[],
     wishList: any[],
     password?: string
+    comments: CommentsUser[]
 }

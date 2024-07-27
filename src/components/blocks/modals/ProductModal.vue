@@ -2,7 +2,7 @@
 import {ResponceData} from "@/models/interface/responceData";
 import {ref} from "vue";
 import {Elem} from "@/models/types";
-import {useAddCart} from "@/shared/useAddCart.ts";
+import {useAddCart} from "@/shared/useAddCart";
 
 const props = defineProps<{
   cardInfo: ResponceData

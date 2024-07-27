@@ -2,13 +2,13 @@
 import {computed, onMounted, reactive, Ref, ref, watch} from "vue";
 import {axiosClient} from "@/axiosClient";
 import {FormValidateLogin} from "@/models/interface/formValidateLogin";
-import {UserData} from "@/models/interface/userData.ts";
+import {UserData} from "@/models/interface/userData";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
-import {Elem} from "@/models/types.ts";
-import {loginFormValidator} from "@/validators/loginFormValidator.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
+import {Elem} from "@/models/types";
+import {loginFormValidator} from "@/validators/loginFormValidator";
 import CryptoJS from 'crypto-js'
-import {defaultUser} from "@/models/defaultUser.ts";
+import {defaultUser} from "@/models/defaultUser";
 
 const store: StoreVuex = useStore()
 const inputPass: Ref<Elem | null> = ref(null)

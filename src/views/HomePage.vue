@@ -5,10 +5,10 @@ import DiscountSwiper from "@/components/blocks/Home/DiscountSwiper.vue";
 import Purchase from "@/components/blocks/Home/Purchase.vue";
 import HomeBlog from "@/components/blocks/Home/HomeBlog.vue";
 import SubScrive from "@/components/blocks/Home/SubScrive.vue";
-import LoginModal from "@/components/ui/modals/LoginModal.vue";
-import RegistrateModal from "@/components/ui/modals/RegistrateModal.vue";
+import LoginModal from "@/components/blocks/modals/LoginModal.vue";
+import RegistrateModal from "@/components/blocks/modals/RegistrateModal.vue";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 import {computed} from "vue";
 
 const store: StoreVuex = useStore()

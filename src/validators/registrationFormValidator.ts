@@ -1,5 +1,5 @@
-import {FormValidRegister} from "@/models/interface/formValidRegister.ts";
-import {axiosClient} from "@/axiosClient.ts";
+import {FormValidRegister} from "@/models/interface/formValidRegister";
+import {axiosClient} from "@/axiosClient";
 
 export async function  registrationFormValidator(form: FormValidRegister) {
     const regExpName = /^[a-zа-я\s]{3,30}$/i

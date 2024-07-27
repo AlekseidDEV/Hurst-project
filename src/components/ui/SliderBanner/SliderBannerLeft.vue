@@ -9,10 +9,10 @@ const aboutProduct: Ref<ResponceData |  null> = ref(null)
 
 onMounted(() => {
   axiosClient.get('products?label=new').then((res) => {
-      const randomCard = useRandomArray(res.data, 2)
+      const randomCard: ResponceData[] = useRandomArray(res.data, 2)
 
-      firstProduct.value = randomCard[0] as ResponceData
-      aboutProduct.value = randomCard[1] as ResponceData
+      firstProduct.value = randomCard[0]
+      aboutProduct.value = randomCard[1]
   })
 })
 </script>
@@ -30,7 +30,9 @@ onMounted(() => {
             <h2 class="banner-title text-white">{{firstProduct?.name}}</h2>
             <p class="mb-0 text-white">{{firstProduct?.category}}</p>
           </div>
-          <a href="#" class="button-one font-16px" data-text="Buy now">Buy now</a>
+          <router-link
+              :to="{name: 'single-product', params: {name: firstProduct?.name.split(' ').join('')}}"
+              class="button-one font-16px">Buy now</router-link>
         </div>
       </div>
       <div class="single-banner banner-2">

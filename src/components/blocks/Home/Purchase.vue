@@ -6,8 +6,8 @@ import {Elem} from "@/models/types";
 import PurchaseCards from "@/components/ui/Cards/PurchaseCards.vue";
 import {StoreVuex} from "@/models/interface/storeVuex";
 import {useUuidGenerator} from "@/shared/useUuidGenerator";
-import {ResponceData} from "@/models/interface/responceData.ts";
-import ProductModal from "@/components/ui/modals/ProductModal.vue";
+import {ResponceData} from "@/models/interface/responceData";
+import ProductModal from "@/components/blocks/modals/ProductModal.vue";
 
 const store: StoreVuex = useStore()
 const purchaseCards = computed(() => store.getters['getPurchaseCard'])

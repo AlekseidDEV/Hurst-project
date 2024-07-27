@@ -671,7 +671,7 @@ pre {
     transition: all 0.5s ease 0s;
     width: calc(100% - 40px);
 }
-.product-action a {
+.product-action span {
     color: #666;
     float: left;
     font-size: 16px;
@@ -680,7 +680,7 @@ pre {
     position: relative;
     width: 25%;
 }
-.product-action a::before {
+.product-action span::before {
     background: #999 none repeat scroll 0 0;
     content: "";
     height: 16px;
@@ -690,10 +690,10 @@ pre {
     top: 50%;
     width: 2px;
 }
-.product-action a:last-child::before {
+.product-action span:last-child::before {
     display: none;
 }
-.product-action a:hover {
+.product-action span:hover {
     color: #c8a165;
 }
 .product-info {
@@ -716,6 +716,7 @@ pre {
     font-weight: 700;
     line-height: 28px;
 }
+
 .pro-rating i {
     color: #c87065 !important;
     font-size: 15px !important;
@@ -843,33 +844,32 @@ pre {
 .like-share {
     padding: 12px 0;
 }
-.like-share a {
+.like-share span {
     color: #999;
     float: left;
     font-size: 12px;
     line-height: 14px;
     margin-right: 20px;
 }
-.like-share a:hover {
+.like-share span:hover {
     color: #c87065;
 }
-.like-share a:last-child {
+.like-share span:last-child {
     margin-right: 0;
 }
-.like-share a i {
+.like-share span i {
     padding: 0 8px 0 2px;
 }
-.blog-photo {
-    overflow: hidden;
-}
+
 .single-blog:hover .blog-photo img {
     transform: scale(1.1);
 }
 .blog-photo img {
-    width: 100%;
     transition: all 0.5s ease 0s;
+    width: 100%;
+    object-fit: cover;
 }
-.blog-photo a {
+.blog-photo p {
     display: block;
 }
 .subscribe-area {
@@ -1110,12 +1110,12 @@ pre {
     visibility: hidden;
     width: 100%;
 }
-.blog-2 .like-share a {
+.blog-2 .like-share span {
     color: #444;
     display: inline-block;
     float: none;
 }
-.blog-2 .like-share a:hover {
+.blog-2 .like-share span:hover {
     color: #c87065;
 }
 .blog-2 .post-meta {
@@ -1573,6 +1573,7 @@ input.cart-plus-minus-box {
 .pagination ul li:hover a {
     color: #c8a165;
 }
+
 .single-pro-area .single-product:hover {
     box-shadow: none;
 }
@@ -1681,7 +1682,7 @@ input.cart-plus-minus-box {
 }
 .view-full-screen {
     bottom: 0;
-    color: #999;
+    color: #fff;
     display: block;
     font-size: 20px;
     height: 25px;
@@ -1693,7 +1694,7 @@ input.cart-plus-minus-box {
     z-index: 9;
 }
 .view-full-screen::before {
-    border-right: 50px solid #fcfbfb;
+    border-right: 50px solid #999999;
     border-top: 50px solid transparent;
     bottom: 0;
     content: "";
@@ -1738,14 +1739,12 @@ input.cart-plus-minus-box {
     float: left;
 }
 .pro-reviewer {
-    float: left;
     width: 90px;
 }
 .pro-reviewer-comment {
-    margin-left: 90px;
-    padding-left: 30px;
+    padding-left: 10px;
 }
-.comment-reply a {
+.comment-reply span {
     background: #f6f6f6 none repeat scroll 0 0;
     color: #999;
     display: inline-block;
@@ -1756,7 +1755,7 @@ input.cart-plus-minus-box {
     text-align: center;
     width: 50px;
 }
-.comment-reply a:hover {
+.comment-reply span:hover {
     background: #c8a165 none repeat scroll 0 0;
     color: #fff;
 }
@@ -2022,7 +2021,7 @@ input.cart-plus-minus-box {
     padding: 40px;
 }
 .blog-details-area .like-share {
-    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
     display: flex;
     bottom: 0;
     padding-left: 20px;
@@ -2057,14 +2056,15 @@ input.cart-plus-minus-box {
 .post-share span {
     margin-right: 20px;
 }
-.post-share a {
+.post-share span {
     color: #999;
     margin-right: 15px;
+    cursor: pointer;
 }
-.post-share a:hover {
+.post-share span:hover {
     color: #c8a165;
 }
-.post-share a:last-child {
+.post-share span:last-child {
     margin-right: 0;
 }
 .author-comments {

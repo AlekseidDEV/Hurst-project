@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import HeaderCartModal from "@/components/ui/header/HeaderCartModal.vue";
-import HeaderMenuModal from "@/components/ui/header/HeaderMenuModal.vue";
+import HeaderMenuModal from "@/components/ui/header/HeaderMenuList.vue";
 import MobileHeaderMenu from "@/components/ui/header/HeaderMobileMenu.vue";
 import {onBeforeMount, onMounted, Ref, ref} from "vue";
-import {Elem} from "@/models/types.ts";
+import {Elem} from "@/models/types";
 import HeaderMobileTop from "@/components/ui/header/HeaderMobileTop.vue";
 
 const stickyMenu: Ref<Elem | null> = ref(null)

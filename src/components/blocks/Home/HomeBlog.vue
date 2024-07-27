@@ -38,21 +38,30 @@ onMounted(() => {
                         {{new Date(post.createdAt).toLocaleString('en', {month: 'long'})}},
                         {{new Date(post.createdAt).getFullYear()}}
                       </p>
-                      <h4 class="post-title"><a href="#" tabindex="0">{{post.title}}</a></h4>
+                      <h4 class="post-title">
+                        <router-link
+                            :to="{name: 'single-blog', params: {id: post.id}}"
+                            >{{post.title}}
+                        </router-link></h4>
+
                     </div>
                   </div>
                   <div class="like-share fix">
-                    <a href="#"><i class="bi bi-heart-fill"></i><span>{{post.likes}} Like</span></a>
-                    <a href="#"><i class="bi bi-chat-left-fill"></i><span>{{post.commentsCount}} Comments</span></a>
-                    <a href="#"><i class="bi bi-share-fill"></i><span>{{post.reposts}} Share</span></a>
+                    <span><i class="bi bi-heart-fill"></i><span>{{post.likes}} Like</span></span>
+                    <span><i class="bi bi-chat-left-fill"></i><span>{{post.commentsCount}} Comments</span></span>
+                    <span><i class="bi bi-share-fill"></i><span>{{post.reposts}} Share</span></span>
                   </div>
                   <p>{{post.text}}</p>
-                  <a href="#" class="button-2 text-dark-red">Read more...</a>
+                  <router-link
+                      :to="{name: 'single-blog', params: {id: post.id}}"
+                      class="button-2 text-dark-red"
+                  >Read more...
+                  </router-link>
                 </div>
               </div>
               <div class="col-xl-6 col-md-5">
                 <div class="blog-photo">
-                  <a href="#"><img class="img-single-blog" :src="post.imagePath" alt="img"></a>
+                  <router-link :to="{name: 'single-blog', params: {id: post.id}}"><img class="img-single-blog" :src="post.imagePath" alt="img"></router-link>
                 </div>
               </div>
             </div>

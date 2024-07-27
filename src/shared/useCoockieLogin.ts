@@ -1,5 +1,5 @@
 import CryptoJS from "crypto-js";
-import {axiosClient} from "@/axiosClient.ts";
+import {axiosClient} from "@/axiosClient";
 import store from "@/store";
 
 export function useCoockieLogin(){

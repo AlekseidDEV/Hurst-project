@@ -118,17 +118,14 @@
   right: 15px;
 }
 /* blog */
-.like-share a {
+.like-share span {
   margin-right: 15px;
 }
 /* subscribe */
 .subscribe input {
   width: 65%;
 }
-/* home-2 */
-.like-share a {
-  margin-right: 8px;
-}
+
 /* Shop */
 .widget-info {
   padding: 20px;
@@ -279,7 +276,7 @@
 .cdown {
   margin: auto 8px;
 }
-.like-share a {
+.like-share span {
   margin-right: 8px;
 }
 .single-banner.banner-4 {
@@ -626,9 +623,10 @@
 .post-year {
   padding-left: 5px;
 }
-.like-share a {
+.like-share span {
   margin-right: 5px;
 }
+
 .product-area .cus-row-30.row {
   margin-left: -15px;
   margin-right: -15px;
@@ -866,10 +864,7 @@
   margin: 5px auto;
 }
 
-
-
 }
- 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}

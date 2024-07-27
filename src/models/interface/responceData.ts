@@ -2,7 +2,7 @@ import {Colors} from "@/models/interface/colors";
 
 export interface ResponceData {
     category: string
-    colors: Colors
+    colors: Colors[]
     description: string
     image: string
     label: string
@@ -11,14 +11,9 @@ export interface ResponceData {
     rating: number
     size: string[]
     comments: CommentProduct[]
-    [key: string]: unknown
 }
 
-export interface ResponceDataCart extends ResponceData {
-    qty: number
-}
-
-interface CommentProduct {
+export interface CommentProduct {
     userName: string
     review: string,
     subject: string,

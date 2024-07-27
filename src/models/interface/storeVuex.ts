@@ -1,8 +1,9 @@
 import {Posts} from "@/models/interface/posts";
-import {ResponceData, ResponceDataCart} from "@/models/interface/responceData";
+import {ResponceData} from "@/models/interface/responceData";
 import {SlidesDiscount, SlidesSliderBanner} from "@/models/interface/sliderModuleStore";
 import {FooterObj} from "@/models/interface/footerLinks";
-import {UserData} from "@/models/interface/userData.ts";
+import {UserData} from "@/models/interface/userData";
+import {DataCart} from "@/models/interface/dataCart";
 
 type Dispatch = <T>(type: string, payload?: T | T[]) => void
 
@@ -13,7 +14,7 @@ interface Getters {
     getSlideDiscount: SlidesDiscount[]
     getSlidesBanner: SlidesSliderBanner[]
     getFeatureCard: ResponceData[]
-    getCart: ResponceDataCart[]
+    getCart: DataCart[]
     getLabelsSearch: string[]
     getUser: UserData
     isModalLogin: boolean

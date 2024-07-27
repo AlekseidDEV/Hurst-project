@@ -3193,6 +3193,9 @@
   ],
   "posts": [
     {
+      "id": 0,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/1.jpg",
       "createdAt": "2024-07-01T10:00:00Z",
       "authorName": "John Doe",
@@ -3203,14 +3206,19 @@
       "text": "Spent a wonderful day hiking in the mountains. The view was breathtaking!",
       "comments": [
         {
+          "id": 201,
           "avatar": "/path/to/commenter1.jpg",
           "commentDate": "2024-07-01T12:00:00Z",
           "commenterName": "Jane Smith",
-          "commentText": "Beautiful photos! The scenery is stunning."
+          "commentText": "Beautiful photos! The scenery is stunning.",
+          "reply": []
         }
       ]
     },
     {
+      "id": 1,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/2.jpg",
       "createdAt": "2024-07-02T14:00:00Z",
       "authorName": "Alice Johnson",
@@ -3221,6 +3229,8 @@
       "text": "Tried a new recipe for homemade pizza today. It turned out great!",
       "comments": [
         {
+          "id": 200,
+          "reply": [],
           "avatar": "/path/to/commenter2.jpg",
           "commentDate": "2024-07-02T15:30:00Z",
           "commenterName": "Tom Brown",
@@ -3229,6 +3239,9 @@
       ]
     },
     {
+      "id": 2,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/3.jpg",
       "createdAt": "2024-07-03T09:30:00Z",
       "authorName": "Mark Wilson",
@@ -3239,14 +3252,28 @@
       "text": "Started my day with a refreshing jog in the park. Feeling energized!",
       "comments": [
         {
+          "id": "358",
           "avatar": "/path/to/commenter3.jpg",
           "commentDate": "2024-07-03T10:00:00Z",
+          "commenterEmail": "LauraWhite@gmail.com",
           "commenterName": "Laura White",
-          "commentText": "Great way to start the day! Keep it up."
+          "commentText": "Great way to start the day! Keep it up.",
+          "reply": [
+            {
+              "avatar": "/path/to/commenter3.jpg",
+              "commentDate": "2024-07-03T13:00:00Z",
+              "commenterEmail": "LauraWhite@gmail.com",
+              "commenterName": "Laura White",
+              "commentText": "he he, test comments"
+            }
+          ]
         }
       ]
     },
     {
+      "id": 3,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/4.jpg",
       "createdAt": "2024-07-04T11:15:00Z",
       "authorName": "Emily Davis",
@@ -3257,6 +3284,8 @@
       "text": "Had a blast at the beach today with friends. Perfect weather and great company.",
       "comments": [
         {
+          "id": 741,
+          "reply": [],
           "avatar": "",
           "commentDate": "2024-07-04T13:00:00Z",
           "commenterName": "Michael Green",
@@ -3265,6 +3294,9 @@
       ]
     },
     {
+      "id": 4,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/5.jpg",
       "createdAt": "2024-07-05T16:45:00Z",
       "authorName": "Sophia Lee",
@@ -3275,6 +3307,17 @@
       "text": "Captured a stunning sunset today. The colors were amazing.",
       "comments": [
         {
+          "id": 980,
+          "reply": [
+            {
+              "id": "eef?",
+              "avatar": "/path/to/commenter3.jpg",
+              "commentDate": "2024-07-26T06:04:29.889Z",
+              "commenterEmail": "alexffff@gmail.com",
+              "commenterName": "alex",
+              "commentText": "dsfasfasdf"
+            }
+          ],
           "avatar": "/path/to/commenter5.jpg",
           "commentDate": "2024-07-05T18:00:00Z",
           "commenterName": "Chris Martinez",
@@ -3283,9 +3326,12 @@
       ]
     },
     {
+      "id": 5,
       "imagePath": "/img/blog/6.jpg",
       "createdAt": "2024-07-06T13:30:00Z",
       "authorName": "James Brown",
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "likes": 85,
       "commentsCount": 1,
       "reposts": 5,
@@ -3293,6 +3339,8 @@
       "text": "Went on a cycling adventure today. Covered a lot of ground and enjoyed every minute.",
       "comments": [
         {
+          "id": 814,
+          "reply": [],
           "avatar": "/path/to/commenter6.jpg",
           "commentDate": "2024-07-06T14:45:00Z",
           "commenterName": "Emma Taylor",
@@ -3301,6 +3349,9 @@
       ]
     },
     {
+      "id": 6,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/7.jpg",
       "createdAt": "2024-07-07T15:00:00Z",
       "authorName": "Linda Miller",
@@ -3311,6 +3362,8 @@
       "text": "Visited an amazing art exhibition today. The artwork was inspiring.",
       "comments": [
         {
+          "id": 400,
+          "reply": [],
           "avatar": "/path/to/commenter7.jpg",
           "commentDate": "2024-07-07T16:30:00Z",
           "commenterName": "David Anderson",
@@ -3319,16 +3372,21 @@
       ]
     },
     {
+      "id": 7,
       "imagePath": "/img/blog/8.jpg",
       "createdAt": "2024-07-08T17:45:00Z",
       "authorName": "Karen Garcia",
       "likes": 115,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "commentsCount": 1,
       "reposts": 7,
       "title": "Gourmet Dinner",
       "text": "Had a gourmet dinner at a new restaurant. The food was exquisite.",
       "comments": [
         {
+          "id": 418,
+          "reply": [],
           "avatar": "/path/to/commenter8.jpg",
           "commentDate": "2024-07-08T19:00:00Z",
           "commenterName": "Jessica Hernandez",
@@ -3337,6 +3395,9 @@
       ]
     },
     {
+      "id": 8,
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "imagePath": "/img/blog/9.jpg",
       "createdAt": "2024-07-09T20:00:00Z",
       "authorName": "Robert Harris",
@@ -3347,6 +3408,8 @@
       "text": "Tried mountain biking for the first time today. It was an exhilarating experience!",
       "comments": [
         {
+          "id": 415,
+          "reply": [],
           "avatar": "/path/to/commenter9.jpg",
           "commentDate": "2024-07-09T21:30:00Z",
           "commenterName": "Brian Clark",
@@ -3355,6 +3418,7 @@
       ]
     },
     {
+      "id": 9,
       "imagePath": "/img/blog/10.jpg",
       "createdAt": "2024-07-10T10:00:00Z",
       "authorName": "Maria Robinson",
@@ -3363,12 +3427,17 @@
       "reposts": 14,
       "title": "Yoga Session",
       "text": "Had a relaxing yoga session this morning. Feeling peaceful and refreshed.",
+      "authorComment": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter conseques ences that are extremely painful.",
+      "authorAvatar": "",
       "comments": [
         {
+          "id": 140,
           "avatar": "",
+          "reply": [],
           "commentDate": "2024-07-10T11:00:00Z",
           "commenterName": "Nancy Lee",
-          "commentText": "Yoga is the best way to start the day. Namaste!"
+          "commentText": "Yoga is the best way to start the day. Namaste!",
+          "answerToQuestions": []
         }
       ]
     }
@@ -3399,12 +3468,13 @@
       },
       "orderHistory": [],
       "wishList": [],
-      "password": "123456f"
+      "password": "123456f",
+      "comments": []
     },
     {
       "userRole": "person",
       "name": "Алексей Рудыко",
-      "id": "OH_bRfw",
+      "id": "lsYcXmn",
       "email": "lesha.rudiko@gmail.com",
       "phone": "89773764301",
       "companyName": "green",
@@ -3426,32 +3496,6 @@
       "orderHistory": [],
       "wishList": [],
       "password": "kok456wwW!"
-    },
-    {
-      "userRole": "person",
-      "name": "john",
-      "id": "XpelZq0",
-      "email": "john.test@gmail.com",
-      "phone": "3708904522010",
-      "companyName": "green",
-      "contry": "",
-      "state": "",
-      "townCity": "",
-      "address": "",
-      "billingAdress": {
-        "name": "",
-        "id": 0,
-        "email": "",
-        "phone": "",
-        "companyName": "",
-        "contry": "",
-        "state": "",
-        "townCity": "",
-        "address": ""
-      },
-      "orderHistory": [],
-      "wishList": [],
-      "password": "johnjohnM!"
     }
   ]
 }

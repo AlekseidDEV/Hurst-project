@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
-import SearchModal from "@/components/ui/modals/SearchModal.vue";
+import SearchModal from "@/components/blocks/modals/SearchModal.vue";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 
 const store: StoreVuex = useStore()
 const searchOpen = ref(false)
@@ -47,5 +47,13 @@ const openSections = (path: string) => {
 </template>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: 0.5s ease;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

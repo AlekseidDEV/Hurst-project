@@ -3,7 +3,8 @@
 import Header from "@/components/common/Header.vue";
 import Footer from "@/components/common/Footer.vue";
 import {onMounted} from "vue";
-import {useCoockieLogin} from "@/shared/useCoockieLogin.ts";
+import {useCoockieLogin} from "@/shared/useCoockieLogin";
+import TheBtnDownScroll from "@/components/common/TheBtnDownScroll.vue";
 
 onMounted(() => {
   useCoockieLogin()
@@ -15,6 +16,7 @@ onMounted(() => {
     <Header/>
     <router-view/>
     <Footer/>
+    <TheBtnDownScroll/>
   </div>
 </template>
 

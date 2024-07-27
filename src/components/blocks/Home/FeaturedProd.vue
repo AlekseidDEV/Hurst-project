@@ -10,8 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css'
 import {useStore} from "vuex";
 import {StoreVuex} from "@/models/interface/storeVuex";
-import ProductModal from "@/components/ui/modals/ProductModal.vue";
-import {ResponceData} from "@/models/interface/responceData.ts";
+import ProductModal from "@/components/blocks/modals/ProductModal.vue";
+import {ResponceData} from "@/models/interface/responceData";
 
 const store: StoreVuex = useStore()
 const slider: Ref<SwiperClass | null> = ref(null)

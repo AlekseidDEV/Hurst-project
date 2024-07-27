@@ -9,9 +9,14 @@ const routes = [
         component: HomePage,
     },
     {
-        path: "/single-product/:name",
+        path: "/single-product/:name?",
         name: "single-product",
         component: () => import('@/views/SingleProductPage.vue')
+    },
+    {
+        path: "/single-blog/:id?",
+        name: "single-blog",
+        component: () => import('@/views/SingleBlogPage.vue')
     },
     {
         path: "/404",

@@ -1,9 +1,9 @@
 import {axiosClient} from "@/axiosClient"
 import {ResponceData} from "@/models/interface/responceData";
-import {HomeModuleStores} from "@/models/interface/homeModuleStores.ts";
+import {GlobalModuleStores} from "@/models/interface/globalModuleStores";
 import {useRandomArray} from "@/shared/useRandomArray";
 
-const homeStore: HomeModuleStores = {
+const globalStore: GlobalModuleStores = {
     state: {
         purchaseCards: [],
         featureCard: [],
@@ -31,7 +31,8 @@ const homeStore: HomeModuleStores = {
                 address: '',
             },
             orderHistory: [],
-            wishList: []
+            wishList: [],
+            comments: []
         },
         cartHistory: [],
         searchResult: [],
@@ -98,6 +99,12 @@ const homeStore: HomeModuleStores = {
         },
         setNewEmail({commit}, email) {
             commit('setNewEmail', email)
+        },
+        setGuestEmail({commit}, email) {
+            commit('setGuestEmail', email)
+        },
+        removeCart({commit}, nameCard: string){
+            commit('deleteCart', nameCard)
         }
     },
     mutations: {
@@ -129,6 +136,13 @@ const homeStore: HomeModuleStores = {
         },
         setNewEmail(state, email) {
             state.newPersonEmail = email
+        },
+        setGuestEmail(state, email) {
+            state.user.email = email
+        },
+        deleteCart(state, name){
+            state.cartHistory = state.cartHistory.filter((elem) => elem.name !== name)
+            localStorage.setItem('cart', JSON.stringify(state.cartHistory))
         }
     },
     getters: {
@@ -162,4 +176,4 @@ const homeStore: HomeModuleStores = {
     },
 }
 
-export default homeStore
+export default globalStore

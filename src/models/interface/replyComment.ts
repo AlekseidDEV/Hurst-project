@@ -1,11 +1,8 @@
-import {ReplyComment} from "@/models/interface/replyComment";
-
-export interface Commentators {
+export interface ReplyComment {
     id: string
     avatar: string
     commentDate: string
     commenterName: string
     commentText: string
     commenterEmail: string
-    reply: ReplyComment[]
 }

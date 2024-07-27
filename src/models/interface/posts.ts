@@ -2,6 +2,9 @@ import {Commentators} from "@/models/interface/commentators";
 
 export interface Posts {
     imagePath: string
+    id: number
+    authorComment: string
+    authorAvatar: string
     createdAt: string
     authorName: string
     "likes": number
@@ -9,6 +12,7 @@ export interface Posts {
     "reposts": number
     "title": string
     "text": string
-    comments: Commentators
+    comments: Commentators[]
+    [key: string]: unknown
 }
 

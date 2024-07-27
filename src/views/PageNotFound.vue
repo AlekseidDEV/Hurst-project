@@ -14,7 +14,7 @@
             </div>
             <div class="breadcumbs pb-15">
               <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><router-link to="/">Home</router-link></li>
                 <li>404</li>
               </ul>
             </div>
@@ -30,7 +30,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="error-content text-center">
-            <img src="/img/bg/error.png" alt="">
+            <img src="/img/bg/error.png" alt="img">
             <h4 class="text-light-black mt-60">Ooops.... Error 404</h4>
             <h5 class="text-light-black">Sorry, But the page you are looking for does't exist</h5>
             <div class="error-form mt-30 mb-30">

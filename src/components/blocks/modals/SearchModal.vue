@@ -2,7 +2,7 @@
 import {computed, ref} from "vue";
 import {watchDebounced} from "@vueuse/core";
 import {useStore} from "vuex";
-import {StoreVuex} from "@/models/interface/storeVuex.ts";
+import {StoreVuex} from "@/models/interface/storeVuex";
 import {useRouter} from "vue-router";
 
 const emits = defineEmits<{

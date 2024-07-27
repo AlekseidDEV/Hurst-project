@@ -4,7 +4,7 @@ import {onMounted, Ref, ref} from "vue";
 import {Elem} from "@/models/types";
 import {useGeneratorStars} from "@/shared/useGeneratorStars";
 import {useRouter} from "vue-router";
-import {useAddCart} from "@/shared/useAddCart.ts";
+import {useAddCart} from "@/shared/useAddCart";
 
 const router = useRouter()
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SingleProduct from "@/components/blocks/SingleProd/SingleProduct.vue";
+import SingleProduct from "@/components/blocks/SingleProduct.vue";
 </script>
 
 <template>
